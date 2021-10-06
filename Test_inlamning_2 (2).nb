@@ -1,0 +1,1504 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     67927,       1496]
+NotebookOptionsPosition[     64182,       1427]
+NotebookOutlinePosition[     64578,       1443]
+CellTagsIndexPosition[     64535,       1440]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[Cell[BoxData[
+ FormBox["l\[ADoubleDot]nder", 
+  TraditionalForm]],ExpressionUUID->"9a86de64-e4ba-4aea-99ef-4a91dbe04c53"]], \
+"Subsubsection",
+ CellChangeTimes->{{3.778231846065784*^9, 3.778231853680112*^9}, {
+  3.778232277913147*^9, 3.778232279916037*^9}, {3.841674428258675*^9, 
+  3.841674467749734*^9}, {3.841674585917313*^9, 3.841674591607997*^9}, {
+  3.8424374549765024`*^9, 3.842437455876524*^9}},
+ ShowAutoSpellCheck->
+  False,ExpressionUUID->"a9fe0b9f-4c08-4f8d-81a2-c0beb33eeac0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"countries", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<Africa Eastern and Southern\>\"", ",", "\"\<Afghanistan\>\"", ",", 
+     "\"\<Africa Western and Central\>\"", ",", "\"\<Angola\>\"", ",", 
+     "\"\<Albania\>\"", ",", "\"\<Andorra\>\"", ",", "\"\<Arab World\>\"", 
+     ",", "\"\<United Arab Emirates\>\"", ",", "\"\<Argentina\>\"", ",", 
+     "\"\<Armenia\>\"", ",", "\"\<Antigua and Barbuda\>\"", ",", 
+     "\"\<Australia\>\"", ",", "\"\<Austria\>\"", ",", "\"\<Azerbaijan\>\"", 
+     ",", "\"\<Burundi\>\"", ",", "\"\<Belgium\>\"", ",", "\"\<Benin\>\"", 
+     ",", "\"\<Burkina Faso\>\"", ",", "\"\<Bangladesh\>\"", ",", 
+     "\"\<Bulgaria\>\"", ",", "\"\<Bahrain\>\"", ",", "\"\<Bahamas, The\>\"", 
+     ",", "\"\<Bosnia and Herzegovina\>\"", ",", "\"\<Belarus\>\"", ",", 
+     "\"\<Belize\>\"", ",", "\"\<Bolivia\>\"", ",", "\"\<Brazil\>\"", ",", 
+     "\"\<Barbados\>\"", ",", "\"\<Brunei Darussalam\>\"", ",", 
+     "\"\<Bhutan\>\"", ",", "\"\<Botswana\>\"", ",", 
+     "\"\<Central African Republic\>\"", ",", "\"\<Canada\>\"", ",", 
+     "\"\<Central Europe and the Baltics\>\"", ",", "\"\<Switzerland\>\"", 
+     ",", "\"\<Chile\>\"", ",", "\"\<China\>\"", ",", "\"\<Cote d'Ivoire\>\"",
+      ",", "\"\<Cameroon\>\"", ",", "\"\<Congo, Dem. Rep.\>\"", ",", 
+     "\"\<Congo, Rep.\>\"", ",", "\"\<Colombia\>\"", ",", "\"\<Comoros\>\"", 
+     ",", "\"\<Cabo Verde\>\"", ",", "\"\<Costa Rica\>\"", ",", 
+     "\"\<Caribbean small states\>\"", ",", "\"\<Cuba\>\"", ",", 
+     "\"\<Cyprus\>\"", ",", "\"\<Czech Republic\>\"", ",", "\"\<Germany\>\"", 
+     ",", "\"\<Djibouti\>\"", ",", "\"\<Dominica\>\"", ",", "\"\<Denmark\>\"",
+      ",", "\"\<Dominican Republic\>\"", ",", "\"\<Algeria\>\"", ",", 
+     "\"\<East Asia & Pacific (excluding high income)\>\"", ",", 
+     "\"\<Early-demographic dividend\>\"", ",", "\"\<East Asia & Pacific\>\"",
+      ",", "\"\<Europe & Central Asia (excluding high income)\>\"", ",", 
+     "\"\<Europe & Central Asia\>\"", ",", "\"\<Ecuador\>\"", ",", 
+     "\"\<Egypt, Arab Rep.\>\"", ",", "\"\<Euro area\>\"", ",", 
+     "\"\<Eritrea\>\"", ",", "\"\<Spain\>\"", ",", "\"\<Estonia\>\"", ",", 
+     "\"\<Ethiopia\>\"", ",", "\"\<European Union\>\"", ",", 
+     "\"\<Fragile and conflict affected situations\>\"", ",", 
+     "\"\<Finland\>\"", ",", "\"\<Fiji\>\"", ",", "\"\<France\>\"", ",", 
+     "\"\<Micronesia, Fed. Sts.\>\"", ",", "\"\<Gabon\>\"", ",", 
+     "\"\<United Kingdom\>\"", ",", "\"\<Georgia\>\"", ",", "\"\<Ghana\>\"", 
+     ",", "\"\<Guinea\>\"", ",", "\"\<Gambia, The\>\"", ",", 
+     "\"\<Guinea-Bissau\>\"", ",", "\"\<Equatorial Guinea\>\"", ",", 
+     "\"\<Greece\>\"", ",", "\"\<Grenada\>\"", ",", "\"\<Guatemala\>\"", ",", 
+     "\"\<Guyana\>\"", ",", "\"\<High income\>\"", ",", "\"\<Honduras\>\"", 
+     ",", "\"\<Heavily indebted poor countries (HIPC)\>\"", ",", 
+     "\"\<Croatia\>\"", ",", "\"\<Haiti\>\"", ",", "\"\<Hungary\>\"", ",", 
+     "\"\<IBRD only\>\"", ",", "\"\<IDA & IBRD total\>\"", ",", 
+     "\"\<IDA total\>\"", ",", "\"\<IDA blend\>\"", ",", "\"\<Indonesia\>\"", 
+     ",", "\"\<IDA only\>\"", ",", "\"\<India\>\"", ",", "\"\<Ireland\>\"", 
+     ",", "\"\<Iran, Islamic Rep.\>\"", ",", "\"\<Iraq\>\"", ",", 
+     "\"\<Iceland\>\"", ",", "\"\<Israel\>\"", ",", "\"\<Italy\>\"", ",", 
+     "\"\<Jamaica\>\"", ",", "\"\<Jordan\>\"", ",", "\"\<Japan\>\"", ",", 
+     "\"\<Kazakhstan\>\"", ",", "\"\<Kenya\>\"", ",", 
+     "\"\<Kyrgyz Republic\>\"", ",", "\"\<Cambodia\>\"", ",", 
+     "\"\<Kiribati\>\"", ",", "\"\<St. Kitts and Nevis\>\"", ",", 
+     "\"\<Korea, Rep.\>\"", ",", "\"\<Kuwait\>\"", ",", 
+     "\"\<Latin America & Caribbean (excluding high income)\>\"", ",", 
+     "\"\<Lao PDR\>\"", ",", "\"\<Lebanon\>\"", ",", "\"\<Liberia\>\"", ",", 
+     "\"\<Libya\>\"", ",", "\"\<St. Lucia\>\"", ",", 
+     "\"\<Latin America & Caribbean\>\"", ",", 
+     "\"\<Least developed countries: UN classification\>\"", ",", 
+     "\"\<Low income\>\"", ",", "\"\<Liechtenstein\>\"", ",", 
+     "\"\<Sri Lanka\>\"", ",", "\"\<Lower middle income\>\"", ",", 
+     "\"\<Low & middle income\>\"", ",", "\"\<Lesotho\>\"", ",", 
+     "\"\<Late-demographic dividend\>\"", ",", "\"\<Lithuania\>\"", ",", 
+     "\"\<Luxembourg\>\"", ",", "\"\<Latvia\>\"", ",", "\"\<Morocco\>\"", 
+     ",", "\"\<Moldova\>\"", ",", "\"\<Madagascar\>\"", ",", 
+     "\"\<Maldives\>\"", ",", "\"\<Middle East & North Africa\>\"", ",", 
+     "\"\<Mexico\>\"", ",", "\"\<Marshall Islands\>\"", ",", 
+     "\"\<Middle income\>\"", ",", "\"\<North Macedonia\>\"", ",", 
+     "\"\<Mali\>\"", ",", "\"\<Malta\>\"", ",", "\"\<Myanmar\>\"", ",", 
+     "\"\<Middle East & North Africa (excluding high income)\>\"", ",", 
+     "\"\<Montenegro\>\"", ",", "\"\<Mongolia\>\"", ",", "\"\<Mozambique\>\"",
+      ",", "\"\<Mauritania\>\"", ",", "\"\<Mauritius\>\"", ",", 
+     "\"\<Malawi\>\"", ",", "\"\<Malaysia\>\"", ",", "\"\<North America\>\"", 
+     ",", "\"\<Namibia\>\"", ",", "\"\<Niger\>\"", ",", "\"\<Nigeria\>\"", 
+     ",", "\"\<Nicaragua\>\"", ",", "\"\<Netherlands\>\"", ",", 
+     "\"\<Norway\>\"", ",", "\"\<Nepal\>\"", ",", "\"\<Nauru\>\"", ",", 
+     "\"\<New Zealand\>\"", ",", "\"\<OECD members\>\"", ",", "\"\<Oman\>\"", 
+     ",", "\"\<Other small states\>\"", ",", "\"\<Pakistan\>\"", ",", 
+     "\"\<Panama\>\"", ",", "\"\<Peru\>\"", ",", "\"\<Philippines\>\"", ",", 
+     "\"\<Palau\>\"", ",", "\"\<Papua New Guinea\>\"", ",", "\"\<Poland\>\"", 
+     ",", "\"\<Pre-demographic dividend\>\"", ",", 
+     "\"\<Korea, Dem. People's Rep.\>\"", ",", "\"\<Portugal\>\"", ",", 
+     "\"\<Paraguay\>\"", ",", "\"\<Pacific island small states\>\"", ",", 
+     "\"\<Post-demographic dividend\>\"", ",", "\"\<Qatar\>\"", ",", 
+     "\"\<Romania\>\"", ",", "\"\<Russian Federation\>\"", ",", 
+     "\"\<Rwanda\>\"", ",", "\"\<South Asia\>\"", ",", "\"\<Saudi Arabia\>\"",
+      ",", "\"\<Sudan\>\"", ",", "\"\<Senegal\>\"", ",", "\"\<Singapore\>\"", 
+     ",", "\"\<Solomon Islands\>\"", ",", "\"\<Sierra Leone\>\"", ",", 
+     "\"\<El Salvador\>\"", ",", "\"\<Somalia\>\"", ",", "\"\<Serbia\>\"", 
+     ",", "\"\<Sub-Saharan Africa (excluding high income)\>\"", ",", 
+     "\"\<South Sudan\>\"", ",", "\"\<Sub-Saharan Africa\>\"", ",", 
+     "\"\<Small states\>\"", ",", "\"\<Sao Tome and Principe\>\"", ",", 
+     "\"\<Suriname\>\"", ",", "\"\<Slovak Republic\>\"", ",", 
+     "\"\<Slovenia\>\"", ",", "\"\<Sweden\>\"", ",", "\"\<Eswatini\>\"", ",", 
+     "\"\<Seychelles\>\"", ",", "\"\<Syrian Arab Republic\>\"", ",", 
+     "\"\<Chad\>\"", ",", 
+     "\"\<East Asia & Pacific (IDA & IBRD countries)\>\"", ",", 
+     "\"\<Europe & Central Asia (IDA & IBRD countries)\>\"", ",", 
+     "\"\<Togo\>\"", ",", "\"\<Thailand\>\"", ",", "\"\<Tajikistan\>\"", ",", 
+     "\"\<Turkmenistan\>\"", ",", 
+     "\"\<Latin America & the Caribbean (IDA & IBRD countries)\>\"", ",", 
+     "\"\<Timor-Leste\>\"", ",", 
+     "\"\<Middle East & North Africa (IDA & IBRD countries)\>\"", ",", 
+     "\"\<Tonga\>\"", ",", "\"\<South Asia (IDA & IBRD)\>\"", ",", 
+     "\"\<Sub-Saharan Africa (IDA & IBRD countries)\>\"", ",", 
+     "\"\<Trinidad and Tobago\>\"", ",", "\"\<Tunisia\>\"", ",", 
+     "\"\<Turkey\>\"", ",", "\"\<Tuvalu\>\"", ",", "\"\<Tanzania\>\"", ",", 
+     "\"\<Uganda\>\"", ",", "\"\<Ukraine\>\"", ",", 
+     "\"\<Upper middle income\>\"", ",", "\"\<Uruguay\>\"", ",", 
+     "\"\<United States\>\"", ",", "\"\<Uzbekistan\>\"", ",", 
+     "\"\<St. Vincent and the Grenadines\>\"", ",", "\"\<Venezuela, RB\>\"", 
+     ",", "\"\<Vietnam\>\"", ",", "\"\<Vanuatu\>\"", ",", "\"\<World\>\"", 
+     ",", "\"\<Samoa\>\"", ",", "\"\<Yemen, Rep.\>\"", ",", 
+     "\"\<South Africa\>\"", ",", "\"\<Zambia\>\"", ",", "\"\<Zimbabwe\>\""}],
+     "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8416745945727262`*^9, 3.841674594908374*^9}, {
+  3.841674752504376*^9, 3.841674776342176*^9}, {3.8416750028018637`*^9, 
+  3.841675006267028*^9}, {3.841675080661745*^9, 3.8416750909058247`*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"c8896779-f632-43d2-aa7f-352b71f273e5"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    RowBox[{
+     SubscriptBox["CO", "2"], " ", "utsl\[ADoubleDot]pp"}]}], 
+   TraditionalForm]],ExpressionUUID->"77927e59-5b0b-451c-b28d-367d18fef3e0"],
+ " per capita (ton)"
+}], "Subsubsection",
+ CellChangeTimes->{{3.778231846065784*^9, 3.778231853680112*^9}, {
+  3.778232277913147*^9, 3.778232279916037*^9}, {3.841674428258675*^9, 
+  3.841674467749734*^9}, {3.841675213655134*^9, 3.841675218551577*^9}, {
+  3.841675694146052*^9, 3.8416756970228643`*^9}},
+ ShowAutoSpellCheck->
+  False,ExpressionUUID->"b997689e-93d8-462b-903e-84d6e45cd193"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"co2perCapita", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.933541201", ",", "0.200151071", ",", "0.515544239", ",", "0.887380364",
+      ",", "1.939731563", ",", "5.97340536", ",", "4.438715965", ",", 
+     "20.7974984", ",", "3.987234198", ",", "1.880246268", ",", "5.504663385",
+      ",", "15.47551649", ",", "7.146637625", ",", "3.221402183", ",", 
+     "0.05279463", ",", "8.179711061", ",", "0.688722324", ",", "0.216186485",
+      ",", "0.512837314", ",", "5.854773434", ",", "19.59297584", ",", 
+     "5.86046391", ",", "6.781131607", ",", "6.2540208", ",", "1.775127848", 
+     ",", "2.000327663", ",", "2.041874199", ",", "4.360870779", ",", 
+     "16.64490862", ",", "1.829277992", ",", "3.64230522", ",", "0.070718706",
+      ",", "15.49702527", ",", "6.597232486", ",", "4.401991044", ",", 
+     "4.624872245", ",", "7.405211347", ",", "0.395305384", ",", 
+     "0.341842908", ",", "0.026169263", ",", "0.613992586", ",", 
+     "1.600650618", ",", "0.312379103", ",", "1.140200528", ",", 
+     "1.652184053", ",", "5.017034408", ",", "2.202300094", ",", 
+     "6.079400502", ",", "9.640704998", ",", "8.558389812", ",", 
+     "0.510989933", ",", "2.513053919", ",", "5.761494164", ",", 
+     "2.363757648", ",", "3.591657418", ",", "5.720397083", ",", "2.27814572",
+      ",", "6.361179651", ",", "7.07331348", ",", "6.690105957", ",", 
+     "2.3138123", ",", "2.502042142", ",", "6.454837567", ",", "0.231696216", 
+     ",", "5.5203504", ",", "12.103085", ",", "0.149050931", ",", 
+     "6.424038741", ",", "0.868444604", ",", "8.04275205", ",", "2.150561976",
+      ",", "4.619241205", ",", "1.598011364", ",", "2.175272204", ",", 
+     "5.398708138", ",", "2.538541691", ",", "0.541201382", ",", 
+     "0.251323233", ",", "0.249989913", ",", "0.165394728", ",", 
+     "5.095625096", ",", "6.08317505", ",", "2.691814193", ",", "1.113969273",
+      ",", "3.13219265", ",", "10.25453315", ",", "1.019032757", ",", 
+     "0.271687567", ",", "4.055928762", ",", "0.299374738", ",", 
+     "4.745506244", ",", "4.382903441", ",", "3.40988701", ",", "0.560235135",
+      ",", "0.920386827", ",", "2.178461553", ",", "0.37549488", ",", 
+     "1.799825446", ",", "7.624325193", ",", "7.693012599", ",", 
+     "4.895195361", ",", "6.237224322", ",", "6.976403837", ",", 
+     "5.376374339", ",", "2.899634155", ",", "2.478595273", ",", "8.74225771",
+      ",", "12.06196914", ",", "0.358028408", ",", "1.73973556", ",", 
+     "0.686777895", ",", "0.690595812", ",", "4.958236393", ",", 
+     "12.22459136", ",", "21.62272431", ",", "2.413939907", ",", 
+     "2.660908493", ",", "4.039707217", ",", "0.273917114", ",", 
+     "8.825249137", ",", "2.14415306", ",", "2.637362569", ",", "0.335389683",
+      ",", "0.23673353", ",", "3.692177857", ",", "0.99815413", ",", 
+     "1.730955497", ",", "3.355676738", ",", "1.218975994", ",", 
+     "6.518254124", ",", "4.137005929", ",", "15.33020808", ",", 
+     "3.959165078", ",", "1.850726784", ",", "3.171832063", ",", 
+     "0.128320761", ",", "3.703674976", ",", "5.638657141", ",", 
+     "3.741477725", ",", "3.252756283", ",", "3.69823452", ",", "3.538239148",
+      ",", "0.294583928", ",", "3.198316241", ",", "0.605492803", ",", 
+     "3.841040725", ",", "4.049968902", ",", "6.725098053", ",", 
+     "0.225115201", ",", "0.908407126", ",", "3.264040313", ",", 
+     "0.086533726", ",", "7.600220413", ",", "15.27087561", ",", 
+     "1.735898378", ",", "0.102037038", ",", "0.667110199", ",", 
+     "0.805815233", ",", "8.772823734", ",", "7.031361189", ",", 
+     "0.428179218", ",", "6.555534744", ",", "6.572664572", ",", 
+     "8.835263958", ",", "15.19212436", ",", "6.406682315", ",", 
+     "0.981820105", ",", "2.42765632", ",", "1.69681923", ",", "1.33369096", 
+     ",", "16.19116744", ",", "0.866804457", ",", "8.235472255", ",", 
+     "0.557925928", ",", "0.709208588", ",", "4.840612761", ",", 
+     "1.210453778", ",", "1.539504166", ",", "9.853587312", ",", 
+     "32.41563917", ",", "3.845132759", ",", "11.12661837", ",", 
+     "0.087790824", ",", "1.526651238", ",", "15.26878053", ",", 
+     "0.483235878", ",", "0.621912357", ",", "8.399134832", ",", 
+     "0.566740598", ",", "0.133330736", ",", "1.060625411", ",", "0.04597479",
+      ",", "6.521922194", ",", "0.763112676", ",", "0.125729734", ",", 
+     "0.763618494", ",", "5.859845144", ",", "0.663406498", ",", 
+     "3.611192614", ",", "6.058635474", ",", "6.774695332", ",", 
+     "3.538009127", ",", "0.959275668", ",", "6.407474008", ",", 
+     "1.647087511", ",", "0.069131598", ",", "5.782778671", ",", 
+     "7.141751179", ",", "0.286471389", ",", "3.714039204", ",", "0.80541954",
+      ",", "12.25964817", ",", "2.614462991", ",", "0.504741813", ",", 
+     "3.861347119", ",", "1.841103111", ",", "1.526651238", ",", 
+     "0.763618494", ",", "12.77844012", ",", "2.592258865", ",", "5.01541837",
+      ",", "0.86918731", ",", "0.205634733", ",", "0.143462178", ",", 
+     "4.154180631", ",", "6.261836804", ",", "1.890244079", ",", 
+     "15.24087458", ",", "3.401191282", ",", "2.540604301", ",", 
+     "4.782754887", ",", "2.698805922", ",", "0.615016657", ",", 
+     "4.483523912", ",", "1.631587535", ",", "0.326681763", ",", 
+     "7.496644895", ",", "0.446065443", ",", "0.849792905"}], "}"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.841674171740613*^9, 3.841674235005128*^9}, {
+   3.841674379750914*^9, 3.8416743972840652`*^9}, {3.841674575032569*^9, 
+   3.841674577559936*^9}, 3.841675096863665*^9, {3.841675200486245*^9, 
+   3.8416752077594*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"281f11a6-555a-415a-8830-56e8e92579f3"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "territoriella ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["CO", "2"], " ", "utsl\[ADoubleDot]pp"}], TraditionalForm]],
+  ExpressionUUID->"b45418bb-e6fa-4e28-ac9b-b5cf8268c003"],
+ " (kton)"
+}], "Subsubsection",
+ CellChangeTimes->{{3.778231846065784*^9, 3.778231853680112*^9}, {
+  3.778232277913147*^9, 3.778232279916037*^9}, {3.841674428258675*^9, 
+  3.841674434145838*^9}, {3.8416752306524267`*^9, 3.841675238545422*^9}, {
+  3.841675710388167*^9, 3.841675711999525*^9}},
+ ShowAutoSpellCheck->
+  False,ExpressionUUID->"7f2c60fe-cb40-47d0-8b4f-27258850dd11"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"co2emissions", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "600351.1333", ",", "7440", ",", "224380", ",", "27340", ",", "5560", ",",
+      "460", ",", "1863603.727", ",", "200300", ",", "177410", ",", "5550", 
+     ",", "530", ",", "386620", ",", "63180", ",", "32020", ",", "590", ",", 
+     "93470", ",", "7910", ",", "4270", ",", "82760", ",", "41130", ",", 
+     "30750", ",", "2260", ",", "22540", ",", "59310", ",", "680", ",", 
+     "22710", ",", "427710", ",", "1250", ",", "7140", ",", "1380", ",", 
+     "8210", ",", "330", ",", "574400", ",", "676470", ",", "37480", ",", 
+     "86620", ",", "10313460", ",", "9910", ",", "8620", ",", "2200", ",", 
+     "3220", ",", "79490", ",", "260", ",", "620", ",", "8260", ",", "36920", 
+     ",", "24970", ",", "7230", ",", "102480", ",", "709540", ",", "490", ",",
+      "180", ",", "33380", ",", "25120", ",", "151670", ",", "11907866.46", 
+     ",", "7400359.524", ",", "14810056.87", ",", "2949087.39", ",", 
+     "6142069.263", ",", "39530", ",", "246260", ",", "2207420", ",", "800", 
+     ",", "258340", ",", "16000", ",", "16280", ",", "2871000", ",", 
+     "771602.9297", ",", "44360", ",", "1900", ",", "309960", ",", "180", ",",
+      "4610", ",", "358800", ",", "9460", ",", "16110", ",", "3120", ",", 
+     "570", ",", "310", ",", "6670", ",", "65290", ",", "300", ",", "18210", 
+     ",", "2440", ",", "12366368.33", ",", "9770", ",", "211980", ",", 
+     "16580", ",", "3330", ",", "46390", ",", "20938730", ",", "21860535.52", 
+     ",", "915178.5696", ",", "505410", ",", "583110", ",", "407199.3144", 
+     ",", "2434520", ",", "37110", ",", "629290", ",", "188140", ",", "2200", 
+     ",", "61970", ",", "324850", ",", "8510", ",", "24700", ",", "1106150", 
+     ",", "220450", ",", "18400", ",", "11000", ",", "11160", ",", "80", ",", 
+     "260", ",", "630870", ",", "89460", ",", "1408370", ",", "18790", ",", 
+     "27710", ",", "1320", ",", "58940", ",", "390", ",", "1689187.436", ",", 
+     "338640.0291", ",", "149413.7119", ",", "140", ",", "21630", ",", 
+     "5608350.968", ",", "21334207.73", ",", "2570", ",", "14912796.92", ",", 
+     "11590", ",", "9320", ",", "7630", ",", "66680", ",", "8590", ",", 
+     "3370", ",", "1910", ",", "2531611.759", ",", "472140", ",", "190", ",", 
+     "21177938.67", ",", "7370", ",", "5620", ",", "1550", ",", "32520", ",", 
+     "1470946.392", ",", "2520", ",", "21320", ",", "6640", ",", "4000", ",", 
+     "4130", ",", "1570", ",", "239620", ",", "5558099.304", ",", "4250", ",",
+      "2290", ",", "130670", ",", "5210", ",", "151170", ",", "37350", ",", 
+     "12030", ",", "70", ",", "32210", ",", "11998460", ",", "73370", ",", 
+     "197072.5527", ",", "208370", ",", "10140", ",", "54280", ",", "142240", 
+     ",", "290", ",", "7460", ",", "312740", ",", "513004.5719", ",", "18120",
+      ",", "49780", ",", "8420", ",", "3780", ",", "10935463.93", ",", 
+     "90170", ",", "74880", ",", "1607550", ",", "1080", ",", "2770040", ",", 
+     "514600", ",", "20200", ",", "9860", ",", "47360", ",", "370", ",", 
+     "1020", ",", "6810", ",", "690", ",", "45540", ",", "822805.4476", ",", 
+     "1380", ",", "823424.7218", ",", "237761.658", ",", "140", ",", "2080", 
+     ",", "33000", ",", "14050", ",", "36000", ",", "1090", ",", "620", ",", 
+     "27910", ",", "1070", ",", "11889820", ",", "3278021.798", ",", "2260", 
+     ",", "257860", ",", "7330", ",", "71730", ",", "1633250", ",", "640", 
+     ",", "1461080", ",", "190", ",", "2770040", ",", "823424.7218", ",", 
+     "17760", ",", "29980", ",", "412970", ",", "10", ",", "11580", ",", 
+     "6130", ",", "185370", ",", "15569855.45", ",", "6520", ",", "4981300", 
+     ",", "112090", ",", "280", ",", "138160", ",", "257860", ",", "180", ",",
+      "34041045.97", ",", "320", ",", "9310", ",", "433250", ",", "7740", ",",
+      "12270"}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8416751197750883`*^9, 3.8416751202848663`*^9}, {
+  3.8416753888968487`*^9, 3.8416753970280247`*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"8afe8fcb-1936-4a05-bf4f-53b48e6b8514"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Visualisera data", "Section",
+ CellChangeTimes->{{3.8424067991654778`*^9, 3.8424067995243826`*^9}, {
+  3.8424320448955846`*^9, 3.842432047225844*^9}, {3.8424320967797656`*^9, 
+  3.8424321012727766`*^9}, {3.8424366759308367`*^9, 
+  3.8424366802670097`*^9}},ExpressionUUID->"9062559c-6d0b-4f65-9bd4-\
+b03ba37e21e4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"percapitacountries", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"co2perCapita", "[", 
+        RowBox[{"[", "x", "]"}], "]"}], ",", " ", 
+       RowBox[{"countries", "[", 
+        RowBox[{"[", "x", "]"}], "]"}]}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", "1", ",", " ", "239"}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.842406806416826*^9, 3.8424068551267757`*^9}, {
+   3.8424069191811275`*^9, 3.8424070776317644`*^9}, {3.842407122500063*^9, 
+   3.8424071833697977`*^9}, {3.842407227563384*^9, 3.842407237073354*^9}, {
+   3.842407271005801*^9, 3.842407328349785*^9}, {3.8424073626947947`*^9, 
+   3.8424073839086685`*^9}, {3.8424074666738386`*^9, 
+   3.8424074757169795`*^9}, {3.8424078798763213`*^9, 3.842407920042855*^9}, {
+   3.842414113205156*^9, 3.842414117537289*^9}, {3.842429824389744*^9, 
+   3.842429836788782*^9}, {3.8424299121284485`*^9, 3.8424299196755*^9}, {
+   3.842431687239663*^9, 3.842431692977766*^9}, 3.842437434320616*^9},
+ CellLabel->"In[8]:=",ExpressionUUID->"ee79670c-0d6a-4de8-947f-b1f41af91d18"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sorteratcapita", "=", 
+   RowBox[{"Sort", "[", "percapitacountries", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8424073917306356`*^9, 3.842407432693001*^9}, {
+   3.8424075081497927`*^9, 3.842407516229396*^9}, {3.8424079281562233`*^9, 
+   3.842407943374486*^9}, {3.842414123952725*^9, 3.842414129249254*^9}, {
+   3.8424142015658703`*^9, 3.842414202348832*^9}, {3.8424298548519096`*^9, 
+   3.8424299328046083`*^9}, 3.8424311774356213`*^9, 3.842437438285717*^9},
+ CellLabel->"In[9]:=",ExpressionUUID->"d19a57a1-5e06-4938-89f0-2114983528be"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sorteratcapita", "[", 
+   RowBox[{"[", "239", "]"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.8424078591003065`*^9, 3.842407865701346*^9}, {
+   3.8424079603801737`*^9, 3.842407961665427*^9}, {3.842414215696005*^9, 
+   3.8424142164920654`*^9}, {3.8424299449775386`*^9, 3.8424299493559895`*^9}, 
+   3.84243743920763*^9},
+ CellLabel->"In[10]:=",ExpressionUUID->"4b5314ae-40d8-45ae-beea-99830acf5415"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"biggest", "=", 
+   RowBox[{"sorteratcapita", "[", 
+    RowBox[{"[", 
+     RowBox[{"231", ";;", "239"}], "]"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.84242671360252*^9, 3.8424268063284597`*^9}, {
+   3.84242694777094*^9, 3.8424269564458294`*^9}, {3.8424289684357295`*^9, 
+   3.8424289747990212`*^9}, {3.842431236265482*^9, 3.842431237362377*^9}, {
+   3.8424313842265115`*^9, 3.8424313846514263`*^9}, {3.8424335006158204`*^9, 
+   3.8424335059297915`*^9}, 3.84243743980103*^9},
+ CellLabel->"In[11]:=",ExpressionUUID->"2a9e6e9b-5ea2-4526-9470-fdefcb7b6245"],
+
+Cell[BoxData[
+ RowBox[{"biggest", ";"}]], "Input",
+ CellChangeTimes->{{3.8424289827523146`*^9, 3.8424289841029196`*^9}, 
+   3.8424374410454903`*^9},
+ CellLabel->"In[12]:=",ExpressionUUID->"cff73a05-3388-477c-85cc-bb4744541762"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"percapitacountries", "[", 
+  RowBox[{"[", "234", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.842431562035703*^9, 3.842431582487437*^9}, {
+   3.8424316200122156`*^9, 3.842431677719175*^9}, 3.842431711531207*^9},
+ CellLabel->"In[13]:=",ExpressionUUID->"a42c0451-3e3c-4d7d-b265-3250e947a5aa"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"4.483523912`", ",", "\<\"World\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.8424316455728707`*^9, 3.8424316781888003`*^9}, 
+   3.8424317125420585`*^9, 3.84243341097147*^9, 3.8424335430331774`*^9, 
+   3.842435081526848*^9, 3.842437466004054*^9, 3.842528950228673*^9},
+ CellLabel->"Out[13]=",ExpressionUUID->"05853c5f-0d4c-464c-8b63-a7394e9f9b9f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Total", "[", "percapitacountries", "]"}]], "Input",
+ CellChangeTimes->{{3.842437419654915*^9, 3.842437426896982*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"57a430bd-2aa4-4d04-b1c2-f15688595c61"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"993.908458063`", ",", 
+   RowBox[{"\<\"Afghanistan\"\>", "+", "\<\"Africa Eastern and Southern\"\>", 
+    "+", "\<\"Africa Western and Central\"\>", "+", "\<\"Albania\"\>", 
+    "+", "\<\"Algeria\"\>", "+", "\<\"Andorra\"\>", "+", "\<\"Angola\"\>", 
+    "+", "\<\"Antigua and Barbuda\"\>", "+", "\<\"Arab World\"\>", 
+    "+", "\<\"Argentina\"\>", "+", "\<\"Armenia\"\>", 
+    "+", "\<\"Australia\"\>", "+", "\<\"Austria\"\>", 
+    "+", "\<\"Azerbaijan\"\>", "+", "\<\"Bahamas, The\"\>", 
+    "+", "\<\"Bahrain\"\>", "+", "\<\"Bangladesh\"\>", 
+    "+", "\<\"Barbados\"\>", "+", "\<\"Belarus\"\>", "+", "\<\"Belgium\"\>", 
+    "+", "\<\"Belize\"\>", "+", "\<\"Benin\"\>", "+", "\<\"Bhutan\"\>", 
+    "+", "\<\"Bolivia\"\>", "+", "\<\"Bosnia and Herzegovina\"\>", 
+    "+", "\<\"Botswana\"\>", "+", "\<\"Brazil\"\>", 
+    "+", "\<\"Brunei Darussalam\"\>", "+", "\<\"Bulgaria\"\>", 
+    "+", "\<\"Burkina Faso\"\>", "+", "\<\"Burundi\"\>", 
+    "+", "\<\"Cabo Verde\"\>", "+", "\<\"Cambodia\"\>", 
+    "+", "\<\"Cameroon\"\>", "+", "\<\"Canada\"\>", 
+    "+", "\<\"Caribbean small states\"\>", 
+    "+", "\<\"Central African Republic\"\>", 
+    "+", "\<\"Central Europe and the Baltics\"\>", "+", "\<\"Chad\"\>", 
+    "+", "\<\"Chile\"\>", "+", "\<\"China\"\>", "+", "\<\"Colombia\"\>", 
+    "+", "\<\"Comoros\"\>", "+", "\<\"Congo, Dem. Rep.\"\>", 
+    "+", "\<\"Congo, Rep.\"\>", "+", "\<\"Costa Rica\"\>", 
+    "+", "\<\"Cote d'Ivoire\"\>", "+", "\<\"Croatia\"\>", "+", "\<\"Cuba\"\>",
+     "+", "\<\"Cyprus\"\>", "+", "\<\"Czech Republic\"\>", 
+    "+", "\<\"Denmark\"\>", "+", "\<\"Djibouti\"\>", "+", "\<\"Dominica\"\>", 
+    "+", "\<\"Dominican Republic\"\>", 
+    "+", "\<\"Early-demographic dividend\"\>", 
+    "+", "\<\"East Asia & Pacific\"\>", 
+    "+", "\<\"East Asia & Pacific (excluding high income)\"\>", 
+    "+", "\<\"East Asia & Pacific (IDA & IBRD countries)\"\>", 
+    "+", "\<\"Ecuador\"\>", "+", "\<\"Egypt, Arab Rep.\"\>", 
+    "+", "\<\"El Salvador\"\>", "+", "\<\"Equatorial Guinea\"\>", 
+    "+", "\<\"Eritrea\"\>", "+", "\<\"Estonia\"\>", "+", "\<\"Eswatini\"\>", 
+    "+", "\<\"Ethiopia\"\>", "+", "\<\"Euro area\"\>", 
+    "+", "\<\"European Union\"\>", "+", "\<\"Europe & Central Asia\"\>", 
+    "+", "\<\"Europe & Central Asia (excluding high income)\"\>", 
+    "+", "\<\"Europe & Central Asia (IDA & IBRD countries)\"\>", 
+    "+", "\<\"Fiji\"\>", "+", "\<\"Finland\"\>", 
+    "+", "\<\"Fragile and conflict affected situations\"\>", 
+    "+", "\<\"France\"\>", "+", "\<\"Gabon\"\>", "+", "\<\"Gambia, The\"\>", 
+    "+", "\<\"Georgia\"\>", "+", "\<\"Germany\"\>", "+", "\<\"Ghana\"\>", 
+    "+", "\<\"Greece\"\>", "+", "\<\"Grenada\"\>", "+", "\<\"Guatemala\"\>", 
+    "+", "\<\"Guinea\"\>", "+", "\<\"Guinea-Bissau\"\>", 
+    "+", "\<\"Guyana\"\>", "+", "\<\"Haiti\"\>", 
+    "+", "\<\"Heavily indebted poor countries (HIPC)\"\>", 
+    "+", "\<\"High income\"\>", "+", "\<\"Honduras\"\>", 
+    "+", "\<\"Hungary\"\>", "+", "\<\"IBRD only\"\>", "+", "\<\"Iceland\"\>", 
+    "+", "\<\"IDA blend\"\>", "+", "\<\"IDA & IBRD total\"\>", 
+    "+", "\<\"IDA only\"\>", "+", "\<\"IDA total\"\>", "+", "\<\"India\"\>", 
+    "+", "\<\"Indonesia\"\>", "+", "\<\"Iran, Islamic Rep.\"\>", 
+    "+", "\<\"Iraq\"\>", "+", "\<\"Ireland\"\>", "+", "\<\"Israel\"\>", 
+    "+", "\<\"Italy\"\>", "+", "\<\"Jamaica\"\>", "+", "\<\"Japan\"\>", 
+    "+", "\<\"Jordan\"\>", "+", "\<\"Kazakhstan\"\>", "+", "\<\"Kenya\"\>", 
+    "+", "\<\"Kiribati\"\>", "+", "\<\"Korea, Dem. People's Rep.\"\>", 
+    "+", "\<\"Korea, Rep.\"\>", "+", "\<\"Kuwait\"\>", 
+    "+", "\<\"Kyrgyz Republic\"\>", "+", "\<\"Lao PDR\"\>", 
+    "+", "\<\"Late-demographic dividend\"\>", 
+    "+", "\<\"Latin America & Caribbean\"\>", 
+    "+", "\<\"Latin America & Caribbean (excluding high income)\"\>", 
+    "+", "\<\"Latin America & the Caribbean (IDA & IBRD countries)\"\>", 
+    "+", "\<\"Latvia\"\>", 
+    "+", "\<\"Least developed countries: UN classification\"\>", 
+    "+", "\<\"Lebanon\"\>", "+", "\<\"Lesotho\"\>", "+", "\<\"Liberia\"\>", 
+    "+", "\<\"Libya\"\>", "+", "\<\"Liechtenstein\"\>", 
+    "+", "\<\"Lithuania\"\>", "+", "\<\"Lower middle income\"\>", 
+    "+", "\<\"Low income\"\>", "+", "\<\"Low & middle income\"\>", 
+    "+", "\<\"Luxembourg\"\>", "+", "\<\"Madagascar\"\>", 
+    "+", "\<\"Malawi\"\>", "+", "\<\"Malaysia\"\>", "+", "\<\"Maldives\"\>", 
+    "+", "\<\"Mali\"\>", "+", "\<\"Malta\"\>", 
+    "+", "\<\"Marshall Islands\"\>", "+", "\<\"Mauritania\"\>", 
+    "+", "\<\"Mauritius\"\>", "+", "\<\"Mexico\"\>", 
+    "+", "\<\"Micronesia, Fed. Sts.\"\>", 
+    "+", "\<\"Middle East & North Africa\"\>", 
+    "+", "\<\"Middle East & North Africa (excluding high income)\"\>", 
+    "+", "\<\"Middle East & North Africa (IDA & IBRD countries)\"\>", 
+    "+", "\<\"Middle income\"\>", "+", "\<\"Moldova\"\>", 
+    "+", "\<\"Mongolia\"\>", "+", "\<\"Montenegro\"\>", 
+    "+", "\<\"Morocco\"\>", "+", "\<\"Mozambique\"\>", "+", "\<\"Myanmar\"\>",
+     "+", "\<\"Namibia\"\>", "+", "\<\"Nauru\"\>", "+", "\<\"Nepal\"\>", 
+    "+", "\<\"Netherlands\"\>", "+", "\<\"New Zealand\"\>", 
+    "+", "\<\"Nicaragua\"\>", "+", "\<\"Niger\"\>", "+", "\<\"Nigeria\"\>", 
+    "+", "\<\"North America\"\>", "+", "\<\"North Macedonia\"\>", 
+    "+", "\<\"Norway\"\>", "+", "\<\"OECD members\"\>", "+", "\<\"Oman\"\>", 
+    "+", "\<\"Other small states\"\>", 
+    "+", "\<\"Pacific island small states\"\>", "+", "\<\"Pakistan\"\>", 
+    "+", "\<\"Palau\"\>", "+", "\<\"Panama\"\>", 
+    "+", "\<\"Papua New Guinea\"\>", "+", "\<\"Paraguay\"\>", 
+    "+", "\<\"Peru\"\>", "+", "\<\"Philippines\"\>", "+", "\<\"Poland\"\>", 
+    "+", "\<\"Portugal\"\>", "+", "\<\"Post-demographic dividend\"\>", 
+    "+", "\<\"Pre-demographic dividend\"\>", "+", "\<\"Qatar\"\>", 
+    "+", "\<\"Romania\"\>", "+", "\<\"Russian Federation\"\>", 
+    "+", "\<\"Rwanda\"\>", "+", "\<\"Samoa\"\>", 
+    "+", "\<\"Sao Tome and Principe\"\>", "+", "\<\"Saudi Arabia\"\>", 
+    "+", "\<\"Senegal\"\>", "+", "\<\"Serbia\"\>", "+", "\<\"Seychelles\"\>", 
+    "+", "\<\"Sierra Leone\"\>", "+", "\<\"Singapore\"\>", 
+    "+", "\<\"Slovak Republic\"\>", "+", "\<\"Slovenia\"\>", 
+    "+", "\<\"Small states\"\>", "+", "\<\"Solomon Islands\"\>", 
+    "+", "\<\"Somalia\"\>", "+", "\<\"South Africa\"\>", 
+    "+", "\<\"South Asia\"\>", "+", "\<\"South Asia (IDA & IBRD)\"\>", 
+    "+", "\<\"South Sudan\"\>", "+", "\<\"Spain\"\>", 
+    "+", "\<\"Sri Lanka\"\>", "+", "\<\"St. Kitts and Nevis\"\>", 
+    "+", "\<\"St. Lucia\"\>", "+", "\<\"St. Vincent and the Grenadines\"\>", 
+    "+", "\<\"Sub-Saharan Africa\"\>", 
+    "+", "\<\"Sub-Saharan Africa (excluding high income)\"\>", 
+    "+", "\<\"Sub-Saharan Africa (IDA & IBRD countries)\"\>", 
+    "+", "\<\"Sudan\"\>", "+", "\<\"Suriname\"\>", "+", "\<\"Sweden\"\>", 
+    "+", "\<\"Switzerland\"\>", "+", "\<\"Syrian Arab Republic\"\>", 
+    "+", "\<\"Tajikistan\"\>", "+", "\<\"Tanzania\"\>", 
+    "+", "\<\"Thailand\"\>", "+", "\<\"Timor-Leste\"\>", "+", "\<\"Togo\"\>", 
+    "+", "\<\"Tonga\"\>", "+", "\<\"Trinidad and Tobago\"\>", 
+    "+", "\<\"Tunisia\"\>", "+", "\<\"Turkey\"\>", 
+    "+", "\<\"Turkmenistan\"\>", "+", "\<\"Tuvalu\"\>", "+", "\<\"Uganda\"\>",
+     "+", "\<\"Ukraine\"\>", "+", "\<\"United Arab Emirates\"\>", 
+    "+", "\<\"United Kingdom\"\>", "+", "\<\"United States\"\>", 
+    "+", "\<\"Upper middle income\"\>", "+", "\<\"Uruguay\"\>", 
+    "+", "\<\"Uzbekistan\"\>", "+", "\<\"Vanuatu\"\>", 
+    "+", "\<\"Venezuela, RB\"\>", "+", "\<\"Vietnam\"\>", 
+    "+", "\<\"World\"\>", "+", "\<\"Yemen, Rep.\"\>", "+", "\<\"Zambia\"\>", 
+    "+", "\<\"Zimbabwe\"\>"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.8425289502786727`*^9},
+ CellLabel->"Out[14]=",ExpressionUUID->"c8e7156a-a18f-4de4-a51c-8b26e5d1815a"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.842434641998643*^9, 3.8424346439847555`*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"d289fec5-8cb4-407e-b308-32ef4b4259d5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Analysera data", "Section",
+ CellChangeTimes->{{3.8424321144723024`*^9, 3.8424321174661207`*^9}, {
+  3.8424366655445647`*^9, 
+  3.842436668126663*^9}},ExpressionUUID->"fd333030-05f1-496a-9f54-\
+8678845c40cd"],
+
+Cell[CellGroupData[{
+
+Cell["1.", "Subsection",
+ CellChangeTimes->{{3.8424366925991793`*^9, 
+  3.8424366929294357`*^9}},ExpressionUUID->"c4d51325-09d1-41ae-bcea-\
+866851d50447"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"totalt", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1990.`", ",", "98462.371847116`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1991.`", ",", "98987.38143285`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1992.`", ",", "99813.54908523199`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1993.`", ",", "100216.423316547`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1994.`", ",", "101537.18489717401`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1995.`", ",", "103296.25934793001`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1996.`", ",", "106154.70010584098`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1997.`", ",", "107376.31135546902`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1998.`", ",", "108022.57284627101`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1999.`", ",", "109856.69807370701`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2000.`", ",", "112416.258116246`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2001.`", ",", "113610.635952175`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2002.`", ",", "115901.223848704`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2003.`", ",", "119930.15013616001`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2004.`", ",", "124960.08846344402`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2005.`", ",", "128897.75152416898`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2006.`", ",", "132297.06634468702`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2007.`", ",", "136405.679742778`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2008.`", ",", "137662.43593741`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2009.`", ",", "135324.15543267998`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2010.`", ",", "141265.10288404`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2011.`", ",", "144422.53459229`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2012.`", ",", "146106.05926769998`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2013.`", ",", "148234.8407671`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2014.`", ",", "149077.14748530003`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2015.`", ",", "149790.2224058`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2016.`", ",", "151341.68784990002`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2017.`", ",", "153595.6630277`"}], "}"}]}], "}"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.842432242853778*^9, 3.8424322521497393`*^9}, 
+   3.842432319297889*^9, 3.8424332613787065`*^9, {3.8424350991540155`*^9, 
+   3.8424351029835043`*^9}, {3.8424351330434895`*^9, 3.842435156715309*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"a74ed552-01c6-4ac0-9e53-2c621f3bef2e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"a1", ",", "b1"}], "}"}], "=", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b"}], "}"}], "/.", 
+   RowBox[{"FindFit", "[", 
+    RowBox[{"totalt", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"a", 
+        RowBox[{"(", 
+         RowBox[{"t", "-", "1990"}], ")"}]}], "+", "b"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"a", ",", "b"}], "}"}], ",", "t"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.842435321490119*^9, 3.8424353872201366`*^9}},
+ CellLabel->"In[17]:=",ExpressionUUID->"de589838-8c26-4e7f-a094-bc5b94153052"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"2314.8702127743622`", ",", "92855.04341634682`"}], "}"}]], "Output",
+ CellChangeTimes->{3.842435388506463*^9, 3.8424361441490393`*^9, 
+  3.842436253947922*^9, 3.842528950392028*^9},
+ CellLabel->"Out[17]=",ExpressionUUID->"708c1913-c380-4594-b1a1-0d3e83bea1e8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"p1", "=", 
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"a1", 
+      RowBox[{"(", 
+       RowBox[{"t", "-", "1990"}], ")"}]}], "+", "b1"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", "1990", ",", "2050"}], "}"}], ",", " ", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<\[CapitalARing]r\>\"", ",", 
+       "\"\<V\[ADoubleDot]rldens energikonsumtion[TWh]\>\""}], "}"}]}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.8424361082354918`*^9, 3.8424362364959135`*^9}, {
+  3.8424364478729973`*^9, 3.842436538429928*^9}, {3.842436606361941*^9, 
+  3.8424366102806125`*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"86b9ba13-ec50-4a66-bbce-cad64be14fe3"],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {}, 
+    TagBox[
+     {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], Opacity[
+      1.], LineBox[CompressedData["
+1:eJwV0ntUzGkYB/C5VNM0P7TatZm0upjJZTHVorS251FNpakluUQJWTKKkAhH
+SMMRpfZ021ovCVvIaJnVdjWj0nY5RUZMKieXLTppt4aYpn33j/e853POc57v
+9z3ntd+8K/gnDovFCqTn//vnb4NZLGsCJ8/troy9pgfrBOyYTO1hGxMkLNHD
++VqJUkRtVRzVrVHqoXjDpI0B1BpNBPtrlR5qzjVVZ1F36gN9Kmv08G5Ymjh3
+KgEmfHYzX6sH70oP4zohgZhZvZ0FrA+gDxQZ7kwjEK8OMbSv+gAFKx9GtdkT
+SG3JDkmd+BEGw/Y6Z4kJOEwY7uWXf4QdEcU8rzkE5qnmBDhuGQWJtDxolYRA
+pLumMd3mE2RLaoYsFxBwH9ybpK77BL7j501dFhNYmHgixO/oZxDXWzl5eBK4
+kRA7tmOhAa5mHC4c8CJw/8q+5yt6DLB7aXWGqT8Bbskz7ZmcMegcGemsCyRQ
+/WYt77S3EeIL1N/FBhMYTimdJBowQqjr9rEjawgst4h2/qpwHLrquQ6Lwghc
+DZ9eG+nEwutw4I+QTQQWX3I78iaJhUWlx9et20qAf97T8c8uFvrNPBbK30Fg
+psuj3hhXNkqOhzbYxhII+32KsyyNjWXdokxdHIGW5te5gldsTLFvajMmEAh5
+vDVtBDl4Jsx8mkUigSkZ7bHzfuXg/Dw3dVUSgVl/t8T4/cNBm6qlTztO0X5z
+Ej6cCeJi0UuQ5Z8l8ICnzC8t5OJWk8dNvhkEDuW2z3Ua5WK0uVfV2mwCS62L
+AupCTNDK8rLAKp+An8QiWVpsglxDT4PLRQKbF9gEDJmZosOL0szFVwjcHZw6
+1r/JFHsbDlS+LSaw0evyX7UqUxzIsl7NURIQnuiZ0TjZDHO3XV+mvk1AtOG3
+X25FmWGcs1YmL6P/YSDc8LrCDLO7n1bvryKg2q7pl1rzMCy9LXWehvZPvDN8
+MoaHcqdLLcseEDAeW5PybwMPhfei5JbNBAy2iiVgZ46jK+9bVbURWLSrQKeL
+M0f7xtG5bVoCihs7zQpazfGtj2PhWR3NT66X+Yv5aCwUp9zsIdDh3zrdJomP
+nmPViWWvaL6mrsuji48OoYGt0f0EXmr9y5a4WmBQ7u305EEC4ieH7eRpFjjt
++aSbvsP0/bHfX9r/ygKnCtnPhj7SvOq+L9rdBRjh0bSPbSQg/yydsD5TgI7K
+2oXh7AtwulUyQ9MvQIuRvnvbqN0OlSfCOwG+d58YuIdaLZLqKgcEWKFZHXmS
+uv3g+oy77wW4+smbtFvU3iIFq0QvwFNGfp8p5wJ0JOg6czgMvpMF5ZVQcxwV
+mTuFDD5M3yMuoz7dbDn01obBu9qsWxrqLw/kybbbMpi8sbu+g1rWrORusWPw
+m7jYYQ73AmTt1+0OFTO4Ii8jcA11UJMkyNuFQbceVccmakN8edE9Vzov0kVG
+UyvspaaeCxjsL3E8eIw6J359hbsbgyfUt69coza3V8ye/wODct5TZxX1uUZL
+xXVPBpfLxipqqIXxeS9mIYO2Wp9Hj6mDG5U5M7wZNLGRb+ihZsV7DF/0ofsj
+Uvv6qU/Z1f043ZfB1sLSuBHqyY3Lr+X7Majq046PU+fv05kJlzH4H/U8K/Q=
+
+       "]]},
+     Annotation[#, "Charting`Private`Tag$8158#1"]& ]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox["\"\[CapitalARing]r\"", TraditionalForm], 
+    FormBox[
+    "\"V\[ADoubleDot]rldens energikonsumtion[TWh]\"", TraditionalForm]},
+  AxesOrigin->{1990., 92855.04625088173},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, 
+    "DefaultGraphicsInteraction" -> {
+     "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+      "Effects" -> {
+       "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+        "Droplines" -> {
+         "freeformCursorMode" -> True, 
+          "placement" -> {"x" -> "All", "y" -> "None"}}}}, "DefaultMeshStyle" -> 
+    AbsolutePointSize[6], "ScalingFunctions" -> None, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{1990, 2050}, {92855.04625088173, 231747.2533482731}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.842436540282042*^9, 3.8424366121739607`*^9, 
+  3.842528950473028*^9},
+ CellLabel->"Out[18]=",ExpressionUUID->"64b9e9cd-4244-45f3-9032-236915131527"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["2.", "Subsection",
+ CellChangeTimes->{{3.8424366996277714`*^9, 
+  3.8424367003874707`*^9}},ExpressionUUID->"5a3d7934-3d09-493d-942a-\
+01fcbbd50c4e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"olja", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1990.`", ",", "37736.94729`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1991.`", ",", "37763.14824`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1992.`", ",", "38422.53103`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1993.`", ",", "38179.42324`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1994.`", ",", "39021.80173`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1995.`", ",", "39555.43054`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1996.`", ",", "40480.1731`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1997.`", ",", "41544.67299`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1998.`", ",", "41768.48384`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1999.`", ",", "42510.09274`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2000.`", ",", "43038.62001`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2001.`", ",", "43421.10755`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2002.`", ",", "43796.55068`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2003.`", ",", "44803.21017`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2004.`", ",", "46503.96733`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2005.`", ",", "47115.72728`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2006.`", ",", "47732.19992`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2007.`", ",", "48471.73162`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2008.`", ",", "48250.64229`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2009.`", ",", "47422.36853`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2010.`", ",", "48949.72046`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2011.`", ",", "49455.27172`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2012.`", ",", "50065.86499`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2013.`", ",", "50698.38455`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2014.`", ",", "51109.97172`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2015.`", ",", "52053.27008`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2016.`", ",", "53001.86598`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2017.`", ",", "53752.27638`"}], "}"}]}], "}"}]}], 
+  ";"}]], "Input",
+ CellLabel->"In[19]:=",ExpressionUUID->"4c2346d7-2ae3-4006-b7f4-adc2e108110b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"andrafornybara", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1990.`", ",", "116.4628246`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1991.`", ",", "121.4122701`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1992.`", ",", "130.3448548`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1993.`", ",", "134.7069628`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1994.`", ",", "139.8004029`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1995.`", ",", "145.5958811`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1996.`", ",", "149.6884804`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1997.`", ",", "160.9528063`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1998.`", ",", "168.4548712`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1999.`", ",", "177.1371664`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2000.`", ",", "185.2722028`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2001.`", ",", "191.0179267`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2002.`", ",", "205.6996386`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2003.`", ",", "217.2027959`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2004.`", ",", "234.3682046`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2005.`", ",", "254.3922875`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2006.`", ",", "271.7633551`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2007.`", ",", "294.2977297`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2008.`", ",", "314.3656167`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2009.`", ",", "338.2157334`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2010.`", ",", "378.0383427`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2011.`", ",", "397.4546676`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2012.`", ",", "430.3624386`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2013.`", ",", "463.9825019`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2014.`", ",", "504.3899227`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2015.`", ",", "538.2067786`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2016.`", ",", "556.9861292`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2017.`", ",", "586.1710901`"}], "}"}]}], "}"}]}], 
+  ";"}]], "Input",
+ CellLabel->"In[20]:=",ExpressionUUID->"2301d83c-f261-403a-a9f6-a5f236b0f91d"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"vatten", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1990.`", ",", "2161.045291`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1991.`", ",", "2213.110915`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1992.`", ",", "2211.503167`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1993.`", ",", "2344.266136`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1994.`", ",", "2359.685227`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1995.`", ",", "2488.983207`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1996.`", ",", "2523.481143`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1997.`", ",", "2569.633113`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1998.`", ",", "2590.551798`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1999.`", ",", "2608.338262`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2000.`", ",", "2654.953445`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2001.`", ",", "2586.668594`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2002.`", ",", "2633.835653`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2003.`", ",", "2629.430399`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2004.`", ",", "2808.226932`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2005.`", ",", "2918.064831`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2006.`", ",", "3030.307944`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2007.`", ",", "3079.79887`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2008.`", ",", "3263.589026`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2009.`", ",", "3253.601171`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2010.`", ",", "3435.905581`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2011.`", ",", "3503.227091`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2012.`", ",", "3671.297583`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2013.`", ",", "3797.954118`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2014.`", ",", "3887.930335`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2015.`", ",", "3891.408797`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2016.`", ",", "4036.073668`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2017.`", ",", "4059.868393`"}], "}"}]}], "}"}]}], 
+  ";"}]], "Input",
+ CellLabel->"In[21]:=",ExpressionUUID->"3e332556-bd6b-47cd-895d-77c2a6fee7bd"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"vind", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1990.`", ",", "3.632470516`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1991.`", ",", "4.086706675`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1992.`", ",", "4.733212019`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1993.`", ",", "5.697568819`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1994.`", ",", "7.122929844`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1995.`", ",", "8.261923444`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1996.`", ",", "9.204610762`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1997.`", ",", "12.01757667`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1998.`", ",", "15.91490057`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1999.`", ",", "21.21534431`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2000.`", ",", "31.41996387`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2001.`", ",", "38.39098735`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2002.`", ",", "52.33180737`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2003.`", ",", "62.91691456`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2004.`", ",", "85.11605376`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2005.`", ",", "104.0868359`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2006.`", ",", "132.8592792`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2007.`", ",", "170.6860872`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2008.`", ",", "220.5696719`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2009.`", ",", "275.9292658`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2010.`", ",", "341.5652412`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2011.`", ",", "436.8034429`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2012.`", ",", "523.8148612`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2013.`", ",", "645.7219776`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2014.`", ",", "712.4070431`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2015.`", ",", "831.8262454`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2016.`", ",", "959.4687163`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2017.`", ",", "1122.74585`"}], "}"}]}], "}"}]}], 
+  ";"}]], "Input",
+ CellLabel->"In[22]:=",ExpressionUUID->"dc6b29b1-bf8a-4dd1-bbbe-84084c0a1161"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sol", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1990.`", ",", "0.`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1991.`", ",", "0.505223075`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1992.`", ",", "0.468615413`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1993.`", ",", "0.556737928`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1994.`", ",", "0.60006443`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1995.`", ",", "0.640874386`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1996.`", ",", "0.705278679`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1997.`", ",", "0.756655499`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1998.`", ",", "0.880289501`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1999.`", ",", "0.965823997`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2000.`", ",", "1.177935576`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2001.`", ",", "1.463956125`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2002.`", ",", "1.831247734`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2003.`", ",", "2.3293707`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2004.`", ",", "3.054656084`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2005.`", ",", "4.249617769`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2006.`", ",", "5.818328387`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2007.`", ",", "7.864870878`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2008.`", ",", "12.72162081`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2009.`", ",", "21.09259048`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2010.`", ",", "33.82948514`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2011.`", ",", "65.21188479`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2012.`", ",", "100.9252749`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2013.`", ",", "139.0442186`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2014.`", ",", "197.6716635`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2015.`", ",", "260.0058008`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2016.`", ",", "328.1826964`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2017.`", ",", "442.6183606`"}], "}"}]}], "}"}]}], 
+  ";"}]], "Input",
+ CellLabel->"In[23]:=",ExpressionUUID->"677f712a-7c76-441d-bd16-66b45c4bd4a0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"totalf\[ODoubleDot]rnybar", "=", " ", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"andrafornybara", "[", 
+       RowBox[{"[", "x", "]"}], "]"}], ",", 
+      RowBox[{"vatten", "[", 
+       RowBox[{"[", "x", "]"}], "]"}], ",", 
+      RowBox[{"vind", "[", 
+       RowBox[{"[", "x", "]"}], "]"}], ",", 
+      RowBox[{"sol", "[", 
+       RowBox[{"[", "x", "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "1", ",", "28"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8424368178735867`*^9, 3.8424368369469233`*^9}, {
+   3.842436875678335*^9, 3.842436923983523*^9}, {3.842436983253002*^9, 
+   3.842437030512429*^9}, 3.8424370617675295`*^9, {3.842437109959367*^9, 
+   3.842437160587088*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"ca04b29d-b702-416b-8092-a5aad02c9cb2"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1990.`", ",", "116.4628246`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1990.`", ",", "2161.045291`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1990.`", ",", "3.632470516`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1990.`", ",", "0.`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1991.`", ",", "121.4122701`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1991.`", ",", "2213.110915`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1991.`", ",", "4.086706675`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1991.`", ",", "0.505223075`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1992.`", ",", "130.3448548`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1992.`", ",", "2211.503167`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1992.`", ",", "4.733212019`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1992.`", ",", "0.468615413`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1993.`", ",", "134.7069628`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1993.`", ",", "2344.266136`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1993.`", ",", "5.697568819`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1993.`", ",", "0.556737928`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1994.`", ",", "139.8004029`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1994.`", ",", "2359.685227`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1994.`", ",", "7.122929844`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1994.`", ",", "0.60006443`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1995.`", ",", "145.5958811`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1995.`", ",", "2488.983207`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1995.`", ",", "8.261923444`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1995.`", ",", "0.640874386`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1996.`", ",", "149.6884804`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1996.`", ",", "2523.481143`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1996.`", ",", "9.204610762`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1996.`", ",", "0.705278679`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1997.`", ",", "160.9528063`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1997.`", ",", "2569.633113`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1997.`", ",", "12.01757667`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1997.`", ",", "0.756655499`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1998.`", ",", "168.4548712`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1998.`", ",", "2590.551798`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1998.`", ",", "15.91490057`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1998.`", ",", "0.880289501`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1999.`", ",", "177.1371664`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1999.`", ",", "2608.338262`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1999.`", ",", "21.21534431`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1999.`", ",", "0.965823997`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2000.`", ",", "185.2722028`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2000.`", ",", "2654.953445`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2000.`", ",", "31.41996387`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2000.`", ",", "1.177935576`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2001.`", ",", "191.0179267`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2001.`", ",", "2586.668594`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2001.`", ",", "38.39098735`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2001.`", ",", "1.463956125`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2002.`", ",", "205.6996386`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2002.`", ",", "2633.835653`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2002.`", ",", "52.33180737`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2002.`", ",", "1.831247734`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2003.`", ",", "217.2027959`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2003.`", ",", "2629.430399`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2003.`", ",", "62.91691456`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2003.`", ",", "2.3293707`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2004.`", ",", "234.3682046`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2004.`", ",", "2808.226932`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2004.`", ",", "85.11605376`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2004.`", ",", "3.054656084`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2005.`", ",", "254.3922875`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2005.`", ",", "2918.064831`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2005.`", ",", "104.0868359`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2005.`", ",", "4.249617769`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2006.`", ",", "271.7633551`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2006.`", ",", "3030.307944`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2006.`", ",", "132.8592792`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2006.`", ",", "5.818328387`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2007.`", ",", "294.2977297`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2007.`", ",", "3079.79887`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2007.`", ",", "170.6860872`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2007.`", ",", "7.864870878`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2008.`", ",", "314.3656167`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2008.`", ",", "3263.589026`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2008.`", ",", "220.5696719`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2008.`", ",", "12.72162081`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2009.`", ",", "338.2157334`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2009.`", ",", "3253.601171`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2009.`", ",", "275.9292658`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2009.`", ",", "21.09259048`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2010.`", ",", "378.0383427`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2010.`", ",", "3435.905581`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2010.`", ",", "341.5652412`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2010.`", ",", "33.82948514`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2011.`", ",", "397.4546676`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2011.`", ",", "3503.227091`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2011.`", ",", "436.8034429`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2011.`", ",", "65.21188479`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2012.`", ",", "430.3624386`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2012.`", ",", "3671.297583`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2012.`", ",", "523.8148612`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2012.`", ",", "100.9252749`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2013.`", ",", "463.9825019`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2013.`", ",", "3797.954118`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2013.`", ",", "645.7219776`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2013.`", ",", "139.0442186`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2014.`", ",", "504.3899227`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2014.`", ",", "3887.930335`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2014.`", ",", "712.4070431`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2014.`", ",", "197.6716635`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2015.`", ",", "538.2067786`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2015.`", ",", "3891.408797`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2015.`", ",", "831.8262454`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2015.`", ",", "260.0058008`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2016.`", ",", "556.9861292`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2016.`", ",", "4036.073668`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2016.`", ",", "959.4687163`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2016.`", ",", "328.1826964`"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2017.`", ",", "586.1710901`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2017.`", ",", "4059.868393`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2017.`", ",", "1122.74585`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2017.`", ",", "442.6183606`"}], "}"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.8424371428057785`*^9, 3.842437161149666*^9}, 
+   3.842528950616028*^9},
+ CellLabel->"Out[24]=",ExpressionUUID->"ddeacf44-8744-447b-b537-2c2e54d701a0"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{958, 988},
+WindowMargins->{{-7, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"44a5e59c-6416-43db-9293-02380618d0d0"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 503, 9, 44, "Subsubsection",ExpressionUUID->"a9fe0b9f-4c08-4f8d-81a2-c0beb33eeac0"],
+Cell[1086, 33, 8046, 119, 714, "Input",ExpressionUUID->"c8896779-f632-43d2-aa7f-352b71f273e5"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[9169, 157, 601, 14, 37, "Subsubsection",ExpressionUUID->"b997689e-93d8-462b-903e-84d6e45cd193"],
+Cell[9773, 173, 5616, 84, 581, "Input",ExpressionUUID->"281f11a6-555a-415a-8830-56e8e92579f3"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[15426, 262, 588, 14, 37, "Subsubsection",ExpressionUUID->"7f2c60fe-cb40-47d0-8b4f-27258850dd11"],
+Cell[16017, 278, 4088, 57, 352, "Input",ExpressionUUID->"8afe8fcb-1936-4a05-bf4f-53b48e6b8514"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[20142, 340, 319, 5, 53, "Section",ExpressionUUID->"9062559c-6d0b-4f65-9bd4-b03ba37e21e4"],
+Cell[20464, 347, 1148, 23, 34, "Input",ExpressionUUID->"ee79670c-0d6a-4de8-947f-b1f41af91d18"],
+Cell[21615, 372, 577, 9, 34, "Input",ExpressionUUID->"d19a57a1-5e06-4938-89f0-2114983528be"],
+Cell[22195, 383, 437, 8, 34, "Input",ExpressionUUID->"4b5314ae-40d8-45ae-beea-99830acf5415"],
+Cell[22635, 393, 597, 11, 34, "Input",ExpressionUUID->"2a9e6e9b-5ea2-4526-9470-fdefcb7b6245"],
+Cell[23235, 406, 227, 4, 34, "Input",ExpressionUUID->"cff73a05-3388-477c-85cc-bb4744541762"],
+Cell[CellGroupData[{
+Cell[23487, 414, 315, 5, 34, "Input",ExpressionUUID->"a42c0451-3e3c-4d7d-b265-3250e947a5aa"],
+Cell[23805, 421, 388, 6, 33, "Output",ExpressionUUID->"05853c5f-0d4c-464c-8b63-a7394e9f9b9f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24230, 432, 220, 3, 34, "Input",ExpressionUUID->"57a430bd-2aa4-4d04-b1c2-f15688595c61"],
+Cell[24453, 437, 7787, 123, 674, "Output",ExpressionUUID->"c8e7156a-a18f-4de4-a51c-8b26e5d1815a"]
+}, Open  ]],
+Cell[32255, 563, 173, 2, 34, "Input",ExpressionUUID->"d289fec5-8cb4-407e-b308-32ef4b4259d5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32465, 570, 214, 4, 67, "Section",ExpressionUUID->"fd333030-05f1-496a-9f54-8678845c40cd"],
+Cell[CellGroupData[{
+Cell[32704, 578, 154, 3, 54, "Subsection",ExpressionUUID->"c4d51325-09d1-41ae-bcea-866851d50447"],
+Cell[32861, 583, 2772, 65, 162, "Input",ExpressionUUID->"a74ed552-01c6-4ac0-9e53-2c621f3bef2e"],
+Cell[CellGroupData[{
+Cell[35658, 652, 594, 17, 28, "Input",ExpressionUUID->"de589838-8c26-4e7f-a094-bc5b94153052"],
+Cell[36255, 671, 300, 5, 70, "Output",ExpressionUUID->"708c1913-c380-4594-b1a1-0d3e83bea1e8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36592, 681, 727, 19, 31, "Input",ExpressionUUID->"86b9ba13-ec50-4a66-bbce-cad64be14fe3"],
+Cell[37322, 702, 3605, 79, 70, "Output",ExpressionUUID->"64b9e9cd-4244-45f3-9032-236915131527"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[40976, 787, 154, 3, 38, "Subsection",ExpressionUUID->"5a3d7934-3d09-493d-942a-01fcbbd50c4e"],
+Cell[41133, 792, 2392, 62, 185, "Input",ExpressionUUID->"4c2346d7-2ae3-4006-b7f4-adc2e108110b"],
+Cell[43528, 856, 2403, 62, 185, "Input",ExpressionUUID->"2301d83c-f261-403a-a9f6-a5f236b0f91d"],
+Cell[45934, 920, 2394, 62, 185, "Input",ExpressionUUID->"3e332556-bd6b-47cd-895d-77c2a6fee7bd"],
+Cell[48331, 984, 2392, 62, 185, "Input",ExpressionUUID->"dc6b29b1-bf8a-4dd1-bbbe-84084c0a1161"],
+Cell[50726, 1048, 2380, 62, 185, "Input",ExpressionUUID->"677f712a-7c76-441d-bd16-66b45c4bd4a0"],
+Cell[CellGroupData[{
+Cell[53131, 1114, 853, 20, 29, "Input",ExpressionUUID->"ca04b29d-b702-416b-8092-a5aad02c9cb2"],
+Cell[53987, 1136, 10155, 286, 574, "Output",ExpressionUUID->"ddeacf44-8744-447b-b537-2c2e54d701a0"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
