@@ -1,0 +1,92 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2402,         84]
+NotebookOptionsPosition[      1783,         67]
+NotebookOutlinePosition[      2178,         83]
+CellTagsIndexPosition[      2135,         80]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+1.
+a) Ja, fl\[ODoubleDot]det bevaras.\
+\>", "Text",
+ CellChangeTimes->{{3.8428560113350034`*^9, 3.842856110520444*^9}, {
+  3.8428714538782663`*^9, 3.842871458998595*^9}, {3.842872941294657*^9, 
+  3.842872941782861*^9}},ExpressionUUID->"598e773b-54f9-41b7-ada9-\
+c5785eea9dec"],
+
+Cell["\<\
+b) att ingen olicka sker 
+att alla k\[ODoubleDot]r med samma hastighet,br\[ODoubleDot]msar samtidigt \
+och gasar samtidigt dvs att allt sker i samma takt. \
+\>", "Text",
+ CellChangeTimes->{{3.842870833711398*^9, 3.8428709304696116`*^9}, {
+  3.8428711192851*^9, 
+  3.842871128695312*^9}},ExpressionUUID->"4c722182-d286-4d96-bd04-\
+d31ee3dd90a4"],
+
+Cell["\<\
+c) In 
+236=w+z
+    280=w+z
+    150=y+x
+    105=x+y
+
+ut
+w+x=241
+w+x=190
+y+z=110
+y+z=230
+d)
+
+e)    \
+\>", "Text",
+ CellChangeTimes->{{3.842871131720222*^9, 3.842871138997617*^9}, {
+  3.842872024132202*^9, 3.8428721094897013`*^9}, {3.8428726824002204`*^9, 
+  3.842872741279375*^9}, {3.8428728089297323`*^9, 
+  3.8428728186712027`*^9}},ExpressionUUID->"64b5b7a9-6033-464a-a4f3-\
+2f44c6064c36"],
+
+Cell[BoxData[
+ RowBox[{"2.", " "}]], "Input",
+ CellChangeTimes->{{3.8428729357877665`*^9, 
+  3.842872936811287*^9}},ExpressionUUID->"355b7fb5-d2e5-4a2d-84e9-\
+48a910bea388"]
+},
+WindowSize->{958, 981},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"07cc980c-f84c-4558-a4c4-3d3b67085785"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 286, 7, 58, "Text",ExpressionUUID->"598e773b-54f9-41b7-ada9-c5785eea9dec"],
+Cell[847, 29, 354, 8, 58, "Text",ExpressionUUID->"4c722182-d286-4d96-bd04-d31ee3dd90a4"],
+Cell[1204, 39, 399, 20, 334, "Text",ExpressionUUID->"64b5b7a9-6033-464a-a4f3-2f44c6064c36"],
+Cell[1606, 61, 173, 4, 29, "Input",ExpressionUUID->"355b7fb5-d2e5-4a2d-84e9-48a910bea388"]
+}
+]
+*)
+
