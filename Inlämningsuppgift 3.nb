@@ -1,0 +1,1053 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     39554,       1045]
+NotebookOptionsPosition[     23725,        713]
+NotebookOutlinePosition[     34395,        953]
+CellTagsIndexPosition[     34352,        950]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Rapport projekt 3", "Title",
+ CellChangeTimes->{{3.841829490920292*^9, 3.841829491649383*^9}, {
+  3.8429322016696568`*^9, 
+  3.8429322024010105`*^9}},ExpressionUUID->"bd671eb1-caf0-4201-9b04-\
+df71dcd0d628"],
+
+Cell["\<\
+Sushil K C, TIDAB, sushilkc@kth.se
+ Sebastian Rone, TIDAB, sebgro@kth.se\
+\>", "Text",
+ CellChangeTimes->{{3.8418294395891714`*^9, 3.841829486142671*^9}, {
+  3.8429317813946667`*^9, 
+  3.842931795726823*^9}},ExpressionUUID->"be5b283a-7b07-4982-8b6e-\
+86aebcd7ce0d"],
+
+Cell[CellGroupData[{
+
+Cell["Trafikfl\[ODoubleDot]de", "Subchapter",
+ CellChangeTimes->{
+  3.841827918309536*^9, {3.8418280575935593`*^9, 3.841828062734706*^9}, {
+   3.8429318736997843`*^9, 3.842931919343808*^9}, {3.842932209353444*^9, 
+   3.842932222616525*^9}, {3.842934990113838*^9, 
+   3.8429349913180733`*^9}},ExpressionUUID->"1e7a1709-2440-47fd-b855-\
+df9468fcbb64"],
+
+Cell[CellGroupData[{
+
+Cell["Sammanfattning", "Section",ExpressionUUID->"f9800f54-b43c-4d80-9a3f-3bae9b1d837c"],
+
+Cell[CellGroupData[{
+
+Cell["Uppgift", "Subsection",ExpressionUUID->"6132e99d-658b-469b-96a5-9668f52236d2"],
+
+Cell[TextData[{
+ "Den h\[ADoubleDot]r uppgiften g\[ARing]r ut p\[ARing] och visa hur man kan \
+anv\[ADoubleDot]nda linj\[ADoubleDot]ra ekvationssystem f\[ODoubleDot]r att \
+studera trafikfl\[ODoubleDot]det genom ett trafiksystem. Trafiksystemet best\
+\[ARing]r av gator och korsningar d\[ADoubleDot]r gatorna m\[ODoubleDot]ts. \
+Varje gata har ett visst fl\[ODoubleDot]de, som m\[ADoubleDot]ts i fordon per \
+tidenhet. Vi ska ber\[ADoubleDot]kna trafikfl\[ODoubleDot]det f\[ODoubleDot]r \
+alla gatorna i trafiksystemet, givet fl\[ODoubleDot]det in till \
+trafiksystemet.  Vi g\[ODoubleDot]r ett  viktigt antagande: ",
+ StyleBox["Trafikfl\[ODoubleDot]det bevaras i varje korsning. ",
+  FontSlant->"Italic"],
+ StyleBox["Det betyder att ett fordon som n\[ARing]r en korsning m\[ARing]ste \
+forts\[ADoubleDot]tta genom trafiksystemet. Ett positivt v\[ADoubleDot]rde p\
+\[ARing] fl\[ODoubleDot]det flyter i pilens riktning och ett negativt fl\
+\[ODoubleDot]de flyter i ",
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox["motsatt",
+  IgnoreSpellCheck->True,
+  FontVariations->{"CompatibilityType"->0}],
+ StyleBox[" riktning.",
+  FontVariations->{"CompatibilityType"->0}]
+}], "Text",
+ CellChangeTimes->{{3.7157639568619967`*^9, 3.715763957166376*^9}, {
+   3.715763987444283*^9, 3.7157639985571938`*^9}, {3.715764086915781*^9, 
+   3.715764089381732*^9}, {3.715764239422283*^9, 3.7157643630818977`*^9}, {
+   3.7465250382345314`*^9, 3.746525074551564*^9}, {3.7773645089432983`*^9, 
+   3.777364603387451*^9}, {3.8090546480036488`*^9, 3.809054755536751*^9}, {
+   3.841027861673171*^9, 3.8410279008451767`*^9}, 
+   3.842931975886856*^9},ExpressionUUID->"abf5f7f9-f83b-4b3d-8446-\
+f993409f37a9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Resultat",
+ FontColor->GrayLevel[0.5]]], "Subsection",
+ CellChangeTimes->{{3.841149047385416*^9, 3.84114905000317*^9}, 
+   3.8418280215726366`*^9},ExpressionUUID->"ba27a0d0-6f88-409a-a8d6-\
+2d2c1b09951b"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+a) \[CapitalADoubleDot]r v\[ARing]rt antagande om att fl\[ODoubleDot]det \
+bevaras giltigt? N\[ADoubleDot]r kan antagandet vara felaktigt?\
+\>", "Subsubsection",
+ CellChangeTimes->{
+  3.8429325614228506`*^9},ExpressionUUID->"4c90c6fc-2461-42e3-bf65-\
+bdbb77d37603"],
+
+Cell["\<\
+Ja det \[ADoubleDot]r gilitigt om man r\[ADoubleDot]knar p\[ARing] ett fl\
+\[ODoubleDot]de som \[ADoubleDot]r v\[ADoubleDot]ldigt stort s\[ARing] att \
+man kan f\[ODoubleDot]rsumma om det inte skulle bli exakt lika m\[ARing]nga \
+bilar som sv\[ADoubleDot]nger ut, som  sv\[ADoubleDot]nger in. Utr\
+\[ADoubleDot]kningen hade inte varit exakt, men man hade f\[ARing]tt en n\
+\[ARing]gorlunda approximation som hade varit v\[ADoubleDot]ldigt n\
+\[ADoubleDot]ra det exakta svaret. Detta funkar inte om man har ett relativt \
+litet fl\[ODoubleDot]de.\
+\>", "Text",
+ CellChangeTimes->{
+  3.84293258070545*^9, {3.8429326981273546`*^9, 
+   3.8429327254502573`*^9}},ExpressionUUID->"5d9cde58-0942-49c4-9fe7-\
+7ccb312f4742"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["b) Vilka andra f\[ODoubleDot]renklingar har vi antagit?", \
+"Subsubsection",
+ CellChangeTimes->{
+  3.8429327682152996`*^9},ExpressionUUID->"251f7e97-a35c-4eb7-8c01-\
+729d1b0c2a36"],
+
+Cell["\<\
+Att ingen olycka sker, att alla k\[ODoubleDot]r med samma hastighet, bromsar \
+samtidigt och gasar samtidigt dvs att allt sker i samma takt. \
+\>", "Text",
+ CellChangeTimes->{
+  3.842932777980699*^9},ExpressionUUID->"658e69c2-b976-428a-b174-\
+a3dd379e4f1e"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["c) St\[ADoubleDot]ll upp ekvationssystemet.", "Subsubsection",
+ CellChangeTimes->{
+  3.842932916086725*^9},ExpressionUUID->"5274b581-de34-4e13-9e4d-\
+1ae25cb71f9d"],
+
+Cell["\<\
+In
+236 + 280 = w + z
+150 +_105 = y + x \
+\>", "Text",
+ CellChangeTimes->{{3.842932943006861*^9, 3.8429329615363865`*^9}, {
+  3.8429330111135373`*^9, 
+  3.842933042703769*^9}},ExpressionUUID->"c17a3289-2573-4496-afa5-\
+e1fb0f6584f8"],
+
+Cell["\<\
+Ut
+241 + 190 = w + x
+110 + 230 = y + z\
+\>", "Text",
+ CellChangeTimes->{{3.842933056767539*^9, 
+  3.842933083620428*^9}},ExpressionUUID->"c6d18a29-a75e-48d9-bed5-\
+6726dd18008b"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["d) Best\[ADoubleDot]m trafikfl\[ODoubleDot]det f\[ODoubleDot]r v\
+\[ADoubleDot]gsystemet.", "Subsubsection",
+ CellChangeTimes->{
+  3.842933125111472*^9},ExpressionUUID->"9b4e28a5-044a-4195-b10c-\
+654149acb07f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"516", " ", "==", 
+      RowBox[{"w", "+", "z"}]}], ",", 
+     RowBox[{"255", "==", 
+      RowBox[{"y", "+", "x"}]}], ",", 
+     RowBox[{"431", "==", 
+      RowBox[{"w", "+", "x"}]}], ",", 
+     RowBox[{"340", "==", 
+      RowBox[{"y", "+", "z"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z", ",", "w"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.842933130789526*^9, 3.8429331329499235`*^9}, {
+  3.842933166085533*^9, 3.842933279652254*^9}, {3.842933549258834*^9, 
+  3.8429335883849325`*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"cc7e1a42-3fcf-40e5-9918-1cbe3e3ae9fa"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Solve", "svars", 
+   "\"Equations may not give solutions for all \\\"solve\\\" variables.\"", 2,
+    5, 5, 16967047934799461320, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.842933280727626*^9, 3.8429335105419083`*^9, {3.842933564354565*^9, 
+   3.842933588736204*^9}, {3.8429337323775024`*^9, 
+   3.8429337352651787`*^9}},ExpressionUUID->"888aaf90-03b9-45e0-9656-\
+f6e9631cbe70"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"y", "\[Rule]", 
+      RowBox[{"255", "-", "x"}]}], ",", 
+     RowBox[{"z", "\[Rule]", 
+      RowBox[{"85", "+", "x"}]}], ",", 
+     RowBox[{"w", "\[Rule]", 
+      RowBox[{"431", "-", "x"}]}]}], "}"}], "}"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "Finns", " ", "o\[ADoubleDot]ndligt", " ", "med", " ", 
+     "l\[ODoubleDot]sningar"}], ",", " ", 
+    RowBox[{
+    "dvs", " ", "vi", " ", "har", " ", "inte", " ", 
+     "tillr\[ADoubleDot]ckligt", " ", "med", " ", "information"}]}], "*)"}]}]],\
+ "Input",
+ CellChangeTimes->{{3.842933739989086*^9, 
+  3.8429337711745462`*^9}},ExpressionUUID->"c30c4c35-844f-404e-873e-\
+d83c91a6a5f5"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "e) Trafikfl\[ODoubleDot]det f\[ODoubleDot]r en av ",
+ StyleBox["x, y, z",
+  FontSlant->"Italic"],
+ " eller ",
+ Cell[BoxData[
+  FormBox["w", TraditionalForm]],ExpressionUUID->
+  "6a7fcd80-e5f3-4084-a4e5-63d6a40f1fab"],
+ " begr\[ADoubleDot]nsas till",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", "100"}], TraditionalForm]],ExpressionUUID->
+  "bb083eba-b78e-4fb7-93df-0f094df498d0"],
+ " eller f\[ADoubleDot]rre fordon per timme p\[ARing] grund av \
+v\[ADoubleDot]garbete. Vad blir trafikfl\[ODoubleDot]det f\[ODoubleDot]r de \
+andra v\[ADoubleDot]garna? "
+}], "Subsubsection",
+ CellChangeTimes->{
+  3.8429338313270726`*^9},ExpressionUUID->"b2283ae5-c83f-440e-8791-\
+1acc06879d8d"],
+
+Cell["N\[ADoubleDot]r w = 100 ", "Text",
+ CellChangeTimes->{{3.842933942927827*^9, 3.8429339536733932`*^9}, {
+  3.8429340631477995`*^9, 
+  3.8429340642947607`*^9}},ExpressionUUID->"cde5ed77-c6a9-4a4c-84cd-\
+43ba8fd7d13d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"516", " ", "==", 
+      RowBox[{"100", "+", "z"}]}], ",", 
+     RowBox[{"255", "==", 
+      RowBox[{"y", "+", "x"}]}], ",", 
+     RowBox[{"431", "==", 
+      RowBox[{"100", "+", "x"}]}], ",", 
+     RowBox[{"340", "==", 
+      RowBox[{"y", "+", "z"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z", ","}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.842933968648653*^9, 3.8429339755213757`*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"2882cc1e-bc8d-4803-9723-ed18edeee428"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"x", "\[Rule]", "331"}], ",", 
+    RowBox[{"y", "\[Rule]", 
+     RowBox[{"-", "76"}]}], ",", 
+    RowBox[{"z", "\[Rule]", "416"}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.8429339774553423`*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"99b0b794-c802-441d-a1e7-39a656362b8b"]
+}, Open  ]],
+
+Cell["N\[ADoubleDot]r z = 100", "Text",
+ CellChangeTimes->{{3.84293401115034*^9, 3.8429340148512897`*^9}, {
+  3.842934066016074*^9, 
+  3.842934069053839*^9}},ExpressionUUID->"9f85fb53-aa4a-414b-ae25-\
+f97ba70da175"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"516", " ", "==", 
+      RowBox[{"w", "+", "100"}]}], ",", 
+     RowBox[{"255", "==", 
+      RowBox[{"y", "+", "x"}]}], ",", 
+     RowBox[{"431", "==", 
+      RowBox[{"w", "+", "x"}]}], ",", 
+     RowBox[{"340", "==", 
+      RowBox[{"y", "+", "100"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "w"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.842934019790475*^9, 3.842934028577194*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"afef1ce7-b897-4ef0-86c3-6ea01d5485f7"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"x", "\[Rule]", "15"}], ",", 
+    RowBox[{"y", "\[Rule]", "240"}], ",", 
+    RowBox[{"w", "\[Rule]", "416"}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.842934029036962*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"4336e3ff-cdc6-4311-bbba-96527011ad98"]
+}, Open  ]],
+
+Cell["N\[ADoubleDot]r y = 100", "Text",
+ CellChangeTimes->{{3.842934035394414*^9, 
+  3.8429340722826896`*^9}},ExpressionUUID->"65d3ace0-feac-40d1-8169-\
+563372e8de2b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"516", " ", "==", 
+      RowBox[{"w", "+", "z"}]}], ",", 
+     RowBox[{"255", "==", 
+      RowBox[{"100", "+", "x"}]}], ",", 
+     RowBox[{"431", "==", 
+      RowBox[{"w", "+", "x"}]}], ",", 
+     RowBox[{"340", "==", 
+      RowBox[{"100", "+", "z"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "z", ",", "w"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8429340781784387`*^9, 3.842934083578504*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"5d4a6b39-0530-4fb1-bf0f-89956143dd77"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"x", "\[Rule]", "155"}], ",", 
+    RowBox[{"z", "\[Rule]", "240"}], ",", 
+    RowBox[{"w", "\[Rule]", "276"}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.8429340861333203`*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"fccbeefd-a667-4afd-8139-e73c66c03295"]
+}, Open  ]],
+
+Cell["N\[ADoubleDot]r x = 100", "Text",
+ CellChangeTimes->{{3.8429340911382637`*^9, 
+  3.84293410125093*^9}},ExpressionUUID->"6ba9d716-6f1a-4ba3-9c79-\
+21424eedfdad"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"516", " ", "==", 
+      RowBox[{"w", "+", "z"}]}], ",", 
+     RowBox[{"255", "==", 
+      RowBox[{"y", "+", "100"}]}], ",", 
+     RowBox[{"431", "==", 
+      RowBox[{"w", "+", "100"}]}], ",", 
+     RowBox[{"340", "==", 
+      RowBox[{"y", "+", "z"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", "z", ",", "w"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.84293410642774*^9, 3.8429341129752936`*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"f4ddb0db-58c4-424d-835d-32c379ed2fc6"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"y", "\[Rule]", "155"}], ",", 
+    RowBox[{"z", "\[Rule]", "185"}], ",", 
+    RowBox[{"w", "\[Rule]", "331"}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.842934114911578*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"2eb7b356-08d4-4c5f-8d82-b8ba77d10ca3"]
+}, Open  ]]
+}, Closed]]
+}, Closed]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Kaniner", "Subchapter",
+ CellChangeTimes->{{3.841829060001943*^9, 3.841829062776434*^9}, {
+   3.842932260787183*^9, 3.842932265376937*^9}, 
+   3.842934993939047*^9},ExpressionUUID->"12d2af2f-d383-44a5-aefa-\
+6dd35d5830d3"],
+
+Cell[CellGroupData[{
+
+Cell["Sammanfattning", "Section",ExpressionUUID->"c7190af1-53fe-48c4-89c1-c1a050fcb430"],
+
+Cell[CellGroupData[{
+
+Cell["Uppgift", "Subsection",ExpressionUUID->"5388cc76-be84-4808-8fa2-42b35277ebf8"],
+
+Cell[TextData[{
+ "Leonardo av Pisa, \[ADoubleDot]ven k\[ADoubleDot]nd som Fibonacci (circa \
+1170-1250) skapade en av de \[ADoubleDot]ldsta matematiska modellerna av f\
+\[ODoubleDot]r\[ODoubleDot]kning. Han modellerade \
+f\[ODoubleDot]r\[ODoubleDot]kning av kaniner. Genom att modellera kaninpar \
+kunde han undvika att ta h\[ADoubleDot]nsyn till individuella kaniner av \
+olika k\[ODoubleDot]n. Modellen beskriver f\[ODoubleDot]r\[ODoubleDot]kningen \
+av kaniner fr\[ARing]n m\[ARing]nad ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "=", "1"}], TraditionalForm]],ExpressionUUID->
+  "f7d429f6-e8d7-41b2-8a70-2235a19c7b98"],
+ " d\[ADoubleDot]r ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["p", "n"], TraditionalForm]],ExpressionUUID->
+  "24969e05-e344-4c67-b9ca-7927b5501d75"],
+ " \[ADoubleDot]r antal kaniner vid m\[ARing]nad ",
+ Cell[BoxData[
+  FormBox["n", TraditionalForm]],ExpressionUUID->
+  "e17398f4-2717-4050-a031-7f5c3e1b5abe"],
+ ". N\[ADoubleDot]r en kanin f\[ODoubleDot]ds, s\[ARing] \[ADoubleDot]r den \
+en unge under en m\[ARing]nad och sedan ",
+ StyleBox["f\[ODoubleDot]r\[ODoubleDot]kar",
+  IgnoreSpellCheck->True],
+ " ",
+ StyleBox["sig",
+  IgnoreSpellCheck->True],
+ " ",
+ StyleBox["kaninparen",
+  IgnoreSpellCheck->True],
+ " ",
+ StyleBox["varje",
+  IgnoreSpellCheck->True],
+ " m\[ARing]nad. ",
+ StyleBox["Antal",
+  IgnoreSpellCheck->True],
+ " kaniner kan ",
+ StyleBox["d\[ARing]",
+  IgnoreSpellCheck->True],
+ " ",
+ StyleBox["beskrivs",
+  IgnoreSpellCheck->True],
+ " av en differensekvation:\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["p", 
+     RowBox[{"n", "+", "2"}]], "=", 
+    RowBox[{
+     SubscriptBox["p", 
+      RowBox[{"n", "+", "1"}]], "+", 
+     SubscriptBox["p", "n"]}]}], TraditionalForm]],ExpressionUUID->
+  "94f6dd36-6804-4a2e-9043-da97ac707f17"],
+ "\nd\[ADoubleDot]r vi antar att vi har bara ett kaninpar vid m\[ARing]nad ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "=", "1"}], TraditionalForm]],ExpressionUUID->
+  "ba27ac9d-c936-44e2-8d07-dd8340b39587"],
+ ", ",
+ StyleBox["dvs",
+  IgnoreSpellCheck->True],
+ " intialv\[ADoubleDot]rdena \[ADoubleDot]r ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["p", "1"], "=", "1"}], TraditionalForm]],ExpressionUUID->
+  "c21ac7fe-70ef-441d-a778-50657f0ebf62"],
+ " och ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["p", "2"], "=", "1"}], TraditionalForm]],ExpressionUUID->
+  "e6b6d71b-a027-48ca-863a-219d9ef4ce25"],
+ ". Vilket betyder att ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["p", "3"], "=", "2"}], TraditionalForm]],ExpressionUUID->
+  "a0839d24-83b6-439e-87d2-7b5dfc03f33e"],
+ ",  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["p", "4"], "=", "3"}], TraditionalForm]],ExpressionUUID->
+  "1200d898-0ce5-4c09-b61b-42b47652506c"],
+ " och ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["p", "5"], "=", "5."}], TraditionalForm]],ExpressionUUID->
+  "186c13fe-649c-4e11-a478-edb19fef1b6f"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.715765252908642*^9, 3.715765262668253*^9}, {
+   3.7157653041522903`*^9, 3.715765401116889*^9}, {3.746525277995468*^9, 
+   3.746525289882745*^9}, {3.7773648000726147`*^9, 3.7773648238262777`*^9}, {
+   3.777365691131125*^9, 3.777365712771319*^9}, {3.8090620823914547`*^9, 
+   3.809062084336722*^9}, {3.809062251655343*^9, 3.809062253327609*^9}, {
+   3.8090623062782717`*^9, 3.8090623530435677`*^9}, {3.809064911389308*^9, 
+   3.8090649157818108`*^9}, {3.841027132010729*^9, 3.841027229295083*^9}, {
+   3.841027348032257*^9, 3.841027395998151*^9}, {3.841027558190188*^9, 
+   3.841027583933589*^9}, {3.841027647799765*^9, 3.8410277046944647`*^9}, 
+   3.8429350192894993`*^9},ExpressionUUID->"df385efd-1bc9-40a6-b1c8-\
+c014c45314d0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Resultat", "Subsection",ExpressionUUID->"7ce724c5-4a78-4e36-9aa4-8717f03f01ce"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Ber\[ADoubleDot]kna talf\[ODoubleDot]ljden och rita en graf \[ODoubleDot]ver \
+den. Anpassa en l\[ADoubleDot]mplig funktion till punkterna och rita den i \
+grafen.\
+\>", "Subsubsection",
+ CellChangeTimes->{
+  3.842935056309348*^9},ExpressionUUID->"1798f8fc-9bd3-4110-88f4-\
+b200eb8da91a"],
+
+Cell[BoxData["a"], "Input",
+ CellChangeTimes->{
+  3.8429350604632125`*^9},ExpressionUUID->"be7cb274-ceee-4dba-9520-\
+feb3981eb84d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Unders\[ODoubleDot]k talf\[ODoubleDot]ljden och diskutera \
+tillv\[ADoubleDot]xtakten, det vill s\[ADoubleDot]ga tidsderivatan.\
+\>", "Subsubsection",
+ CellChangeTimes->{
+  3.8429350840968657`*^9},ExpressionUUID->"8cfd74dd-1cff-4442-96e4-\
+83c44891ccf3"],
+
+Cell[BoxData["a"], "Input",
+ CellChangeTimes->{
+  3.842935085629959*^9},ExpressionUUID->"35e49576-675a-4bab-b4da-\
+070dce428acd"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exponentialfunktionen \[ADoubleDot]r l\[ODoubleDot]sning till \
+differentialekvationen ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"d", " ", "x"}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"d", " ", "t"}], ")"}]}], "=", 
+    RowBox[{"r", " ", "x"}]}], TraditionalForm]],ExpressionUUID->
+  "fe5f0b8c-601a-4570-97e0-e101f9aebe7a"],
+ " d\[ADoubleDot]r ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],ExpressionUUID->
+  "578f93cd-04fe-4649-be45-3dc63415c43f"],
+ " \[ADoubleDot]r tillv\[ADoubleDot]xt / populationsenhet, d\[ADoubleDot]r vi \
+antar att ",
+ Cell[BoxData[
+  FormBox["x", TraditionalForm]],ExpressionUUID->
+  "4bdd3b65-b6ad-4541-90fb-4cb13115c0ed"],
+ " \[ADoubleDot]r populationen. F\[ODoubleDot]r att hantera att en viss plats \
+bara kan ge mat till en viss m\[ADoubleDot]ngd kaniner s\[ARing] kan man l\
+\[ADoubleDot]gga till en korrektionsfaktor. D\[ARing] f\[ARing]r man \
+logistiska tillv\[ADoubleDot]xtekvationen: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"d", " ", "x"}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"d", " ", "t"}], ")"}]}], "=", 
+    RowBox[{"r", " ", 
+     RowBox[{"x", " ", "[", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"K", "-", "x"}], ")"}], "/", "K"}], "]"}]}]}], 
+   TraditionalForm]],ExpressionUUID->"3a920db1-f334-4b3e-ac39-b0693ff314c4"],
+ ". N\[ADoubleDot]r populationen n\[ADoubleDot]rmar sig ",
+ Cell[BoxData[
+  FormBox["K", TraditionalForm]],ExpressionUUID->
+  "d7179344-4351-44b9-a3b3-967b4963e6b5"],
+ " s\[ARing] minskar populations\[ODoubleDot]kningen till noll. Ekvationen \
+kan l\[ODoubleDot]sas med hj\[ADoubleDot]lp av f\[ODoubleDot]ljande kommando:"
+}], "Subsubsection",
+ CellChangeTimes->{
+  3.8429350986944466`*^9, {3.8429351920840416`*^9, 3.8429351953492413`*^9}, {
+   3.8429352373691607`*^9, 3.8429352597145386`*^9}, {3.842935297117196*^9, 
+   3.8429353025512238`*^9}},ExpressionUUID->"64b997cb-9b97-45d4-bd31-\
+4aced5e8ed29"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"x", "'"}], "[", "t", "]"}], "\[Equal]", 
+      RowBox[{"r", " ", 
+       RowBox[{"x", "[", "t", "]"}], 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"k", "-", 
+          RowBox[{"x", "[", "t", "]"}]}], ")"}], "/", "k"}]}]}], ",", " ", 
+     RowBox[{
+      RowBox[{"x", "[", "0", "]"}], "\[Equal]", "x0"}]}], "}"}], ",", " ", 
+   RowBox[{"x", "[", "t", "]"}], ",", " ", "t"}], "]"}]], "Input",
+ CellChangeTimes->{{3.842181892289597*^9, 3.84218204036446*^9}, {
+  3.842182132119206*^9, 3.842182174423161*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"2238c9c2-8f40-4049-b61e-cc38beeff9fd"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Solve", "ifun", 
+   "\"Inverse functions are being used by \
+\\!\\(\\*RowBox[{\\\"Solve\\\"}]\\), so some solutions may not be found; use \
+Reduce for complete solution information.\"", 2, 8, 2, 18838638699475791647, 
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.84285563647801*^9, 3.8428556496205025`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[8]:=",ExpressionUUID->"bd73c55c-b449-4bb5-a80b-43c107da80d3"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"x", "[", "t", "]"}], "\[Rule]", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"r", " ", "t"}]], " ", "k", " ", "x0"}], 
+     RowBox[{"k", "-", "x0", "+", 
+      RowBox[{
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{"r", " ", "t"}]], " ", "x0"}]}]]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.8428556365478973`*^9, 3.8428556496295023`*^9}},
+ CellLabel->"Out[8]=",ExpressionUUID->"4d119913-12e6-4955-9c0b-bc68968c0fdb"]
+}, Open  ]],
+
+Cell["\<\
+Bortse fr\[ARing]n felmeddelandet. Tilldela resultatet ovan till en funktion \
+(j\[ADoubleDot]mf\[ODoubleDot]r hur ni anv\[ADoubleDot]nde Solve i f\
+\[ODoubleDot]rra inl\[ADoubleDot]mningsuppgiften). Best\[ADoubleDot]m v\
+\[ADoubleDot]rdet p\[ARing] x0 och r baserade p\[ARing] vad ni kom fram till \
+i uppgift a) och b) . Rita sedan en graf \[ODoubleDot]ver funktionen med Plot \
+och anv\[ADoubleDot]nd sedan Manipulate f\[ODoubleDot]r att variera v\
+\[ADoubleDot]rdet p\[ARing] k. Best\[ADoubleDot]m giltighetsomr\[ARing]det f\
+\[ODoubleDot]r Fibonaccis modell som funktion av v\[ADoubleDot]rdet p\[ARing] \
+k.\
+\>", "Text",
+ CellChangeTimes->{{3.842182186554139*^9, 3.842182356159429*^9}, {
+  3.842182447535574*^9, 
+  3.842182556850644*^9}},ExpressionUUID->"bb31264c-91d7-40dc-b13a-\
+790d54b51cb0"]
+}, Open  ]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Referenser", "Section",
+ CellChangeTimes->{{3.8429354618983707`*^9, 
+  3.842935465185264*^9}},ExpressionUUID->"16ac24f5-8c8c-4205-975a-\
+2a376c645506"],
+
+Cell["\<\
+Fr\[ARing]n Wolfram Dokumentation: https://reference.wolfram.com/language/\
+\>", "Text",
+ CellChangeTimes->{{3.842676107628832*^9, 
+  3.842676135132373*^9}},ExpressionUUID->"2db03501-c3f3-4721-a46c-\
+23674ba117f9"]
+}, Closed]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{948., 562.5},
+WindowMargins->{{156.75, Automatic}, {Automatic, 36}},
+PageHeaders->{{None, None, None}, {
+   Cell[
+    TextData[{"KTH/ICT - Kommunikationssystem"}], "PageHeader", FontFamily -> 
+    "Arial", FontSize -> 9], None, None}},
+PageFooters->{{None, None, None}, {None, 
+   Cell[
+    TextData[{
+      CounterBox["Page"]}], "PageNumber"], None}},
+PrintingOptions->{"FacingPages"->False},
+TrackCellChangeTimes->True,
+SpellingDictionaries->{"CorrectWords"->{
+ "Uppgift", "Polynomekvation", "polynomekvationen", "Sammanfattning", 
+  "l\[ODoubleDot]sningarna", "Hitta", "ocks\[ARing]", "grafen", "polynomet", 
+  "f\[ODoubleDot]r", "markera", "nollst\[ADoubleDot]llen", "r\[ODoubleDot]d", 
+  "punkt", "Resultat", "Olikhet", "Binomisk", "ekvation", "Arean", "cirkel", 
+  "n\[ADoubleDot]rmev\[ADoubleDot]rde", "Sparkl\[ADoubleDot]ngd", "Kod", 
+  "best\[ADoubleDot]mma", "kan", "mindre", "skrivas", "kvadrat", 
+  "V\[ADoubleDot]gbygge", "Sushil", "Rone", "F\[ODoubleDot]r", "att", "hitta",
+   "Anv\[ADoubleDot]nder", "funktionen", "d\[ADoubleDot]r", 
+  "l\[ODoubleDot]sa", "variabeln", "anv\[ADoubleDot]nder", "spara", 
+  "ekvationens", "sk\[ADoubleDot]rningspunkter", "p\[ARing]", 
+  "v\[ADoubleDot]rderna", "anv\[ADoubleDot]nda", "dem", "n\[ADoubleDot]r", 
+  "rita", "samt", "punkternas", "storlek", "anv\[ADoubleDot]nds", "plotta", 
+  "uppgift", "L\[ODoubleDot]s", "kapitel", "Matematisk", "boken", 
+  "kommunikation", "skapande", "ett", "exakt", "svar", "det", 
+  "\[ADoubleDot]r", "l\[ADoubleDot]mpligt", "illustrera", 
+  "l\[ODoubleDot]sningsomr\[ARing]det", "grafiskt", "projekt", "Axeslabel", 
+  "horisontal", "ge", "namnet", "vertikal", "punkter", "f\[ARing]", 
+  "nollst\[ADoubleDot]llena", "n\[ARing]gonstans", "punkterna", "vart", 
+  "f\[ADoubleDot]rgen", "v\[ADoubleDot]ljer", "efter", "v\[ADoubleDot]rdet", 
+  "Graf", "hur", "konvergerar", "som", "funktion", "antal", "sidor", 
+  "Ber\[ADoubleDot]kning", "trigonometriska", "differensekvation", 
+  "k\[ADoubleDot]nd", "\[ADoubleDot]ven", "h\[ADoubleDot]nsyn", 
+  "individuella", "kaniner", "k\[ODoubleDot]n", "olika", "Modellen", 
+  "matematiska", "\[ADoubleDot]ldsta", "skapade", "undvika", "han", "kunde", 
+  "kaninpar", "kanin", "f\[ODoubleDot]ds", "unge", "m\[ARing]nad", 
+  "intialv\[ADoubleDot]rdena", "vid", "har", "antar", "s\[ARing]", 
+  "f\[ODoubleDot]r\[ODoubleDot]kningen", "Vilket", "beskriver", "betyder", 
+  "modellerna", "f\[ODoubleDot]r\[ODoubleDot]kning", "modellerade", 
+  "fr\[ARing]n", "Genom", "modellera", "N\[ADoubleDot]r", "andra", 
+  "v\[ADoubleDot]garna", "Vad", "blir", "v\[ADoubleDot]garbete", 
+  "trafikfl\[ODoubleDot]det", "timme", "uppgiften", "h\[ADoubleDot]r", 
+  "g\[ARing]r", "ut", "linj\[ADoubleDot]ra", "ekvationssystem", "studera", 
+  "genom", "trafiksystem", "Trafiksystemet", "best\[ARing]r", "korsningar", 
+  "riktning", "flyter", "korsning", "m\[ARing]ste", "forts\[ADoubleDot]tta", 
+  "trafiksystemet", "positivt", "Ett", "v\[ADoubleDot]rde", 
+  "fl\[ODoubleDot]det", "pilens", "g\[ODoubleDot]r", "viktigt", "givet", 
+  "gatorna", "alla", "ber\[ADoubleDot]kna", "n\[ARing]r", "fordon", 
+  "tidenhet", "m\[ADoubleDot]ts", "fl\[ODoubleDot]de", "visst", "gata", 
+  "Varje", "m\[ODoubleDot]ts", "antagande", "negativt", "bevaras", "varje", 
+  "Trafikfl\[ODoubleDot]det", "v\[ADoubleDot]ldigt", "stort", "giltigt", 
+  "antagandet", "felaktigt", "r\[ADoubleDot]knar", "v\[ARing]rt", 
+  "\[CapitalADoubleDot]r", "Ja", "gilitigt"}},
+Magnification:>0.9 Inherited,
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (July 9, 2021)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Default.nb"]], 
+   Cell["Modify the definitions below to change the default appearance of all \
+cells in a given style. \nMake modifications to any definition using commands \
+in the Format menu.", "Text"], 
+   Cell[
+    CellGroupData[{
+      Cell["Notebook Options Settings", "Section"], 
+      Cell[
+       StyleData["Notebook"], ShowCellBracket -> Automatic]}, Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell["Styles for Title and Section Cells", "Section"], 
+      Cell[
+       CellGroupData[{
+         Cell["Title", "Subsection"], 
+         Cell[
+          StyleData["Title"], FontFamily -> "Arial", FontSize -> 36, 
+          FontWeight -> "Bold", FontColor -> GrayLevel[0.5]], 
+         Cell[
+          StyleData["Subtitle"], FontFamily -> "Arial", FontWeight -> "Bold"], 
+         Cell[
+          StyleData["Subsubtitle"], FontFamily -> "Arial", FontSize -> 18]}, 
+        Closed]], 
+      Cell[
+       CellGroupData[{
+         Cell[
+         "Chapter", "Subsection", 
+          CellChangeTimes -> {{3.6182073006504073`*^9, 
+           3.6182073204926414`*^9}}], 
+         Cell[
+          StyleData["Chapter"], FontFamily -> "Arial", FontSize -> 34, 
+          FontWeight -> "Plain", FontSlant -> "Plain", 
+          FontVariations -> {"StrikeThrough" -> False, "Underline" -> False}], 
+         Cell[
+          StyleData["Subchapter"], CellDingbat -> 
+          StyleBox["\[FilledSmallSquare]", Alignment -> Baseline, 
+            RGBColor[
+            0.09803921568627451, 0.32941176470588235`, 0.6509803921568628]], 
+          FontFamily -> "Arial", FontSize -> 28, FontWeight -> "Plain", 
+          FontSlant -> "Plain", 
+          FontVariations -> {
+           "StrikeThrough" -> False, "Underline" -> False}]}, Closed]], 
+      Cell[
+       CellGroupData[{
+         Cell["Section", "Subsection"], 
+         Cell[
+          StyleData["Section"], CellDingbat -> None, ShowGroupOpener -> True, 
+          FontFamily -> "Arial", FontSize -> 24, FontWeight -> "Bold", 
+          FontColor -> GrayLevel[0.5]], 
+         Cell[
+          StyleData["Subsection"], CellDingbat -> None, ShowGroupOpener -> 
+          True, CellMargins -> {{40., 3.}, {8., 12.}}, FontFamily -> "Arial", 
+          FontSize -> 18, FontWeight -> "Bold", FontColor -> GrayLevel[0.3]], 
+         Cell[
+          StyleData["Subsubsection"], CellDingbat -> None, ShowGroupOpener -> 
+          True, CellMargins -> {{53., Inherited}, {2, 10}}, FontFamily -> 
+          "Arial", FontSize -> 16, FontWeight -> "Bold", FontColor -> 
+          GrayLevel[0.]], 
+         Cell[
+          StyleData["Subsubsubsection"], CellDingbat -> None, ShowGroupOpener -> 
+          True, MenuSortingValue -> 1400, FontFamily -> "Arial Narrow", 
+          FontSize -> 14, FontWeight -> "Bold", FontSlant -> "Plain", 
+          FontVariations -> {"StrikeThrough" -> False, "Underline" -> False}, 
+          FontColor -> GrayLevel[0]]}, Closed]]}, Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell["Styles for Body Text", "Section"], 
+      Cell[
+       CellGroupData[{
+         Cell["Standard", "Subsection"], 
+         Cell[
+          StyleData["Text"], FontFamily -> "Times"], 
+         Cell[
+          StyleData["SmallText"], MenuSortingValue -> 1425, FontFamily -> 
+          "Times"]}, Closed]], 
+      Cell[
+       CellGroupData[{
+         Cell["Display", "Subsection"], 
+         Cell[
+          CellGroupData[{
+            Cell["Lists", "Subsubsection"], 
+            Cell[
+             StyleData["Item"], CellDingbat -> 
+             StyleBox["\[FilledCircle]", Alignment -> Baseline, 
+               GrayLevel[0.3]], FontFamily -> "Times"], 
+            Cell[
+             StyleData["ItemParagraph"], FontFamily -> "Times"], 
+            Cell[
+             StyleData["Subitem"], CellDingbat -> 
+             StyleBox["\[FilledSmallCircle]", Alignment -> Baseline, 
+               GrayLevel[0.3]], FontFamily -> "Times"], 
+            Cell[
+             StyleData["SubitemParagraph"], FontFamily -> "Times"], 
+            Cell[
+             StyleData["Subsubitem"], CellDingbat -> 
+             StyleBox["\[FilledSmallCircle]", Alignment -> Baseline, 
+               GrayLevel[0.5]], FontFamily -> "Times"], 
+            Cell[
+             StyleData["SubsubitemParagraph"], FontFamily -> "Times"], 
+            Cell[
+             StyleData["ItemNumbered"], FontFamily -> "Times"], 
+            Cell[
+             StyleData["SubitemNumbered"], FontFamily -> "Times"], 
+            Cell[
+             StyleData["SubsubitemNumbered"], FontFamily -> "Times"]}, 
+           Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell["Templates", "Subsubsection"], 
+            Cell[
+             StyleData[
+             "SideCaptionArray", StyleDefinitions -> StyleData["Text"]], 
+             GridBoxOptions -> {
+              GridBoxAlignment -> {"Columns" -> {Left}, "Rows" -> {Center}}, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}}], 
+            Cell[
+             StyleData[
+             "SideCaption", StyleDefinitions -> StyleData["SmallText"]]]}, 
+           Closed]]}, Closed]]}, Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell["Styles for Input and Output Cells", "Section"], 
+      Cell[
+       StyleData["Input"], ShowCellBracket -> True], 
+      Cell[
+       StyleData["InputOnly"], ShowCellBracket -> True], 
+      Cell[
+       StyleData["Code"], ShowCellBracket -> True], 
+      Cell[
+       StyleData["Output"], ShowCellBracket -> True], 
+      Cell[
+       StyleData["Message"], ShowCellBracket -> True], 
+      Cell[
+       StyleData["Print"], ShowCellBracket -> True]}, Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell["Styles for Formulas and Programming", "Section"], 
+      Cell[
+       StyleData["InlineFormula"]], 
+      Cell[
+       StyleData["DisplayFormula"], FontFamily -> "Times"], 
+      Cell[
+       StyleData["DisplayFormulaNumbered"], FontFamily -> "Times"], 
+      Cell[
+       StyleData["Program"], ShowCellBracket -> True]}, Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell["Citation Styles", "Section"], 
+      Cell[
+       StyleData["Reference"]]}, Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       TextData[{"Styles for ", 
+         StyleBox["Mathematica", FontSlant -> "Italic"], 
+         " System\[Hyphen]specific Elements"}], "Section"], 
+      Cell[
+       CellGroupData[{
+         Cell["Default Box Styles", "Subsection"], 
+         Cell[
+          StyleData["Graphics"], FontFamily -> "Times"], 
+         Cell[
+          StyleData["Graphics3D"], FontFamily -> "Times"], 
+         Cell[
+          StyleData["NetworkGraphics"], FontFamily -> "Times"]}, Closed]]}, 
+     Closed]]}, Visible -> False, FrontEndVersion -> 
+  "12.3 for Microsoft Windows (64-bit) (July 9, 2021)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"],
+ExpressionUUID->"9a459537-b390-4778-9972-5667e43f4321"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 213, 4, 73, "Title",ExpressionUUID->"bd671eb1-caf0-4201-9b04-df71dcd0d628"],
+Cell[796, 28, 275, 7, 48, "Text",ExpressionUUID->"be5b283a-7b07-4982-8b6e-86aebcd7ce0d"],
+Cell[CellGroupData[{
+Cell[1096, 39, 349, 6, 54, "Subchapter",ExpressionUUID->"1e7a1709-2440-47fd-b855-df9468fcbb64"],
+Cell[CellGroupData[{
+Cell[1470, 49, 88, 0, 52, "Section",ExpressionUUID->"f9800f54-b43c-4d80-9a3f-3bae9b1d837c"],
+Cell[CellGroupData[{
+Cell[1583, 53, 84, 0, 37, "Subsection",ExpressionUUID->"6132e99d-658b-469b-96a5-9668f52236d2"],
+Cell[1670, 55, 1688, 29, 104, "Text",ExpressionUUID->"abf5f7f9-f83b-4b3d-8446-f993409f37a9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3395, 89, 228, 4, 37, "Subsection",ExpressionUUID->"ba27a0d0-6f88-409a-a8d6-2d2c1b09951b"],
+Cell[CellGroupData[{
+Cell[3648, 97, 275, 6, 28, "Subsubsection",ExpressionUUID->"4c90c6fc-2461-42e3-bf65-bdbb77d37603"],
+Cell[3926, 105, 724, 13, 66, "Text",ExpressionUUID->"5d9cde58-0942-49c4-9fe7-7ccb312f4742"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[4687, 123, 186, 4, 23, "Subsubsection",ExpressionUUID->"251f7e97-a35c-4eb7-8c01-729d1b0c2a36"],
+Cell[4876, 129, 267, 6, 29, "Text",ExpressionUUID->"658e69c2-b976-428a-b174-a3dd379e4f1e"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[5180, 140, 170, 3, 23, "Subsubsection",ExpressionUUID->"5274b581-de34-4e13-9e4d-1ae25cb71f9d"],
+Cell[5353, 145, 242, 8, 66, "Text",ExpressionUUID->"c17a3289-2573-4496-afa5-e1fb0f6584f8"],
+Cell[5598, 155, 188, 7, 66, "Text",ExpressionUUID->"c6d18a29-a75e-48d9-bed5-6726dd18008b"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[5823, 167, 216, 4, 23, "Subsubsection",ExpressionUUID->"9b4e28a5-044a-4195-b10c-654149acb07f"],
+Cell[CellGroupData[{
+Cell[6064, 175, 694, 18, 26, "Input",ExpressionUUID->"cc7e1a42-3fcf-40e5-9918-1cbe3e3ae9fa"],
+Cell[6761, 195, 491, 12, 26, "Message",ExpressionUUID->"888aaf90-03b9-45e0-9656-f6e9631cbe70"]
+}, Open  ]],
+Cell[7267, 210, 732, 22, 26, InheritFromParent,ExpressionUUID->"c30c4c35-844f-404e-873e-d83c91a6a5f5"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[8036, 237, 693, 19, 42, "Subsubsection",ExpressionUUID->"b2283ae5-c83f-440e-8791-1acc06879d8d"],
+Cell[8732, 258, 221, 4, 29, "Text",ExpressionUUID->"cde5ed77-c6a9-4a4c-84cd-43ba8fd7d13d"],
+Cell[CellGroupData[{
+Cell[8978, 266, 593, 16, 26, "Input",ExpressionUUID->"2882cc1e-bc8d-4803-9723-ed18edeee428"],
+Cell[9574, 284, 348, 9, 30, "Output",ExpressionUUID->"99b0b794-c802-441d-a1e7-39a656362b8b"]
+}, Open  ]],
+Cell[9937, 296, 215, 4, 29, "Text",ExpressionUUID->"9f85fb53-aa4a-414b-ae25-f97ba70da175"],
+Cell[CellGroupData[{
+Cell[10177, 304, 586, 16, 26, "Input",ExpressionUUID->"afef1ce7-b897-4ef0-86c3-6ea01d5485f7"],
+Cell[10766, 322, 325, 8, 30, "Output",ExpressionUUID->"4336e3ff-cdc6-4311-bbba-96527011ad98"]
+}, Open  ]],
+Cell[11106, 333, 167, 3, 29, "Text",ExpressionUUID->"65d3ace0-feac-40d1-8169-563372e8de2b"],
+Cell[CellGroupData[{
+Cell[11298, 340, 588, 16, 25, "Input",ExpressionUUID->"5d4a6b39-0530-4fb1-bf0f-89956143dd77"],
+Cell[11889, 358, 328, 8, 28, "Output",ExpressionUUID->"fccbeefd-a667-4afd-8139-e73c66c03295"]
+}, Open  ]],
+Cell[12232, 369, 166, 3, 29, "Text",ExpressionUUID->"6ba9d716-6f1a-4ba3-9c79-21424eedfdad"],
+Cell[CellGroupData[{
+Cell[12423, 376, 587, 16, 26, "Input",ExpressionUUID->"f4ddb0db-58c4-424d-835d-32c379ed2fc6"],
+Cell[13013, 394, 326, 8, 30, "Output",ExpressionUUID->"2eb7b356-08d4-4c5f-8d82-b8ba77d10ca3"]
+}, Open  ]]
+}, Closed]]
+}, Closed]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13424, 411, 228, 4, 54, "Subchapter",ExpressionUUID->"12d2af2f-d383-44a5-aefa-6dd35d5830d3"],
+Cell[CellGroupData[{
+Cell[13677, 419, 88, 0, 52, "Section",ExpressionUUID->"c7190af1-53fe-48c4-89c1-c1a050fcb430"],
+Cell[CellGroupData[{
+Cell[13790, 423, 84, 0, 37, "Subsection",ExpressionUUID->"5388cc76-be84-4808-8fa2-42b35277ebf8"],
+Cell[13877, 425, 3704, 104, 122, "Text",ExpressionUUID->"df385efd-1bc9-40a6-b1c8-c014c45314d0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17618, 534, 85, 0, 37, "Subsection",ExpressionUUID->"7ce724c5-4a78-4e36-9aa4-8717f03f01ce"],
+Cell[CellGroupData[{
+Cell[17728, 538, 298, 7, 28, "Subsubsection",ExpressionUUID->"1798f8fc-9bd3-4110-88f4-b200eb8da91a"],
+Cell[18029, 547, 131, 3, 25, "Input",ExpressionUUID->"be7cb274-ceee-4dba-9520-feb3981eb84d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18197, 555, 264, 6, 28, "Subsubsection",ExpressionUUID->"8cfd74dd-1cff-4442-96e4-83c44891ccf3"],
+Cell[18464, 563, 129, 3, 25, "Input",ExpressionUUID->"35e49576-675a-4bab-b4da-070dce428acd"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[18630, 571, 2012, 51, 80, "Subsubsection",ExpressionUUID->"64b997cb-9b97-45d4-bd31-4aced5e8ed29"],
+Cell[CellGroupData[{
+Cell[20667, 626, 719, 19, 25, "Input",ExpressionUUID->"2238c9c2-8f40-4049-b61e-cc38beeff9fd"],
+Cell[21389, 647, 474, 11, 26, "Message",ExpressionUUID->"bd73c55c-b449-4bb5-a80b-43c107da80d3"],
+Cell[21866, 660, 548, 14, 49, "Output",ExpressionUUID->"4d119913-12e6-4955-9c0b-bc68968c0fdb"]
+}, Open  ]],
+Cell[22429, 677, 811, 14, 66, "Text",ExpressionUUID->"bb31264c-91d7-40dc-b13a-790d54b51cb0"]
+}, Open  ]]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23301, 698, 157, 3, 52, "Section",ExpressionUUID->"16ac24f5-8c8c-4205-975a-2a376c645506"],
+Cell[23461, 703, 224, 5, 29, "Text",ExpressionUUID->"2db03501-c3f3-4721-a46c-23674ba117f9"]
+}, Closed]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
